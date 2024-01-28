@@ -26,102 +26,97 @@ export default function HomePage() {
           <Image
             src="/profile.jpg"
             alt="Profile"
-            className="h-32 w-32 flex-shrink-0 rounded-full border-2 border-white print:border-0"
+            className="h-24 w-24 flex-shrink-0 rounded-full border-2 border-white print:border-0"
             height="256"
             width="256"
           />
           <div className="space-y-4 font-heading">
             <div>
-              <h1 className="text-5xl font-black tracking-wide">
+              <h1 className="text-3xl font-black tracking-wide sm:text-4xl">
                 Kris McGinnes
               </h1>
-              <h2 className="text-secondary text-lg font-medium">
+              <h2 className="text-secondary text-xl font-medium">
                 Engineer & Designer
               </h2>
             </div>
-            <ul className="text-muted text-body flex flex-wrap gap-4 print:gap-2">
-              <li>
-                <FindMeLink
-                  icon={EmailIcon}
-                  href="mailto:kris@mcginnes.io"
-                  aria-label="Email"
-                >
-                  kris@mcginnes.io
-                </FindMeLink>
-              </li>
-              <li>
-                <FindMeLink
-                  icon={LinkedInIcon}
-                  href="https://www.linkedin.com/in/krismcginnes/"
-                  aria-label="LinkedIn"
-                >
-                  linkedin.com/in/krismcginnes
-                </FindMeLink>
-              </li>
-              <li>
-                <FindMeLink
-                  icon={GitHubIcon}
-                  href="https://github.com/kmcginnes"
-                  aria-label="GitHub"
-                >
-                  github.com/kmcginnes
-                </FindMeLink>
-              </li>
-              <li>
-                <FindMeLink
-                  icon={MastodonIcon}
-                  href="https://mastodon.social/@kmcginnes"
-                  aria-label="Mastodon"
-                >
-                  mastodon.social/@kmcginnes
-                </FindMeLink>
-              </li>
-              <li>
-                <FindMeLink
-                  icon={InstagramIcon}
-                  href="https://www.instagram.com/kmcginnes"
-                  aria-label="Instagram"
-                >
-                  instagram.com/kmcginnes
-                </FindMeLink>
-              </li>
-              <li className="hidden print:inline">
-                <FindMeLink
-                  icon={InternetIcon}
-                  href="http://krismcginnes.com"
-                  aria-label="Website"
-                >
-                  krismcginnes.com
-                </FindMeLink>
-              </li>
-            </ul>
           </div>
         </div>
       </section>
-      <section className="hidden flex-col gap-4 md:flex-row md:items-start print:hidden">
-        <div className="flex grow items-center md:order-2 md:justify-center">
-          <span className="text-tertiary font-mono text-9xl">&lt;/&gt;</span>
+      <section className="space-y-8">
+        <div className="prose-default prose prose-lg">
+          <p>
+            Hi, my name is Kris and I got in to coding because I wanted to make
+            everyone's computing world <strong>better</strong>. The status quo
+            options were simply not good enough, and I, arrogantly, thought I
+            could do better.
+          </p>
+          <p>
+            It turns out building software is hard. To do it well takes{" "}
+            <strong>focus</strong>, <strong>dedication</strong>, and{" "}
+            <strong>support</strong>. I have been lucky enough to work with many
+            teams who share the vision that software can be{" "}
+            <strong>great</strong>.
+          </p>
         </div>
-        <h1 className="text-4xl font-black leading-tight tracking-wide md:text-5xl">
-          Think. Design. <br />
-          Develop. Deploy. <br />
-          <span className="text-secondary">Repeat.</span>
-        </h1>
-      </section>
-      <section className="prose-default prose prose-lg">
-        <p>
-          Hi, my name is Kris and I got in to coding because I wanted to make
-          everyone's computing world <strong>better</strong>. The status quo
-          options were simply not good enough, and I, arrogantly, thought I
-          could do better.
-        </p>
-        <p>
-          It turns out building software is hard. To do it well takes{" "}
-          <strong>focus</strong>, <strong>dedication</strong>, and{" "}
-          <strong>support</strong>. I have been lucky enough to work with many
-          teams who share the vision that software can be <strong>great</strong>
-          .
-        </p>
+        <div className="space-y-4">
+          <h2 className="section-header">Find Me Online</h2>
+          <ul className="text-muted text-body flex flex-wrap gap-4 print:gap-2">
+            <li>
+              <FindMeLink
+                icon={EmailIcon}
+                href="mailto:kris@mcginnes.io"
+                aria-label="Email"
+              >
+                kris@mcginnes.io
+              </FindMeLink>
+            </li>
+            <li>
+              <FindMeLink
+                icon={LinkedInIcon}
+                href="https://www.linkedin.com/in/krismcginnes/"
+                aria-label="LinkedIn"
+              >
+                linkedin.com/in/krismcginnes
+              </FindMeLink>
+            </li>
+            <li>
+              <FindMeLink
+                icon={GitHubIcon}
+                href="https://github.com/kmcginnes"
+                aria-label="GitHub"
+              >
+                github.com/kmcginnes
+              </FindMeLink>
+            </li>
+            <li>
+              <FindMeLink
+                icon={MastodonIcon}
+                href="https://mastodon.social/@kmcginnes"
+                aria-label="Mastodon"
+              >
+                mastodon.social/@kmcginnes
+              </FindMeLink>
+            </li>
+            <li>
+              <FindMeLink
+                icon={InstagramIcon}
+                href="https://www.instagram.com/kmcginnes"
+                aria-label="Instagram"
+              >
+                instagram.com/kmcginnes
+              </FindMeLink>
+            </li>
+            <li className="hidden print:inline">
+              <FindMeLink
+                icon={InternetIcon}
+                href="http://krismcginnes.com"
+                aria-label="Website"
+              >
+                krismcginnes.com
+              </FindMeLink>
+            </li>
+          </ul>
+        </div>
       </section>
       <section className="flex flex-col gap-8 print:gap-4">
         <h1 className="flex text-3xl font-black tracking-wider">Skills</h1>
