@@ -51,6 +51,24 @@ export default function HomePage() {
               </li>
               <li>
                 <FindMeLink
+                  icon={LinkedInIcon}
+                  href="https://www.linkedin.com/in/krismcginnes/"
+                  aria-label="LinkedIn"
+                >
+                  linkedin.com/in/krismcginnes
+                </FindMeLink>
+              </li>
+              <li>
+                <FindMeLink
+                  icon={GitHubIcon}
+                  href="https://github.com/kmcginnes"
+                  aria-label="GitHub"
+                >
+                  github.com/kmcginnes
+                </FindMeLink>
+              </li>
+              <li>
+                <FindMeLink
                   icon={MastodonIcon}
                   href="https://mastodon.social/@kmcginnes"
                   aria-label="Mastodon"
@@ -65,24 +83,6 @@ export default function HomePage() {
                   aria-label="Instagram"
                 >
                   instagram.com/kmcginnes
-                </FindMeLink>
-              </li>
-              <li>
-                <FindMeLink
-                  icon={GitHubIcon}
-                  href="https://github.com/kmcginnes"
-                  aria-label="GitHub"
-                >
-                  github.com/kmcginnes
-                </FindMeLink>
-              </li>
-              <li>
-                <FindMeLink
-                  icon={LinkedInIcon}
-                  href="https://www.linkedin.com/in/krismcginnes/"
-                  aria-label="LinkedIn"
-                >
-                  linkedin.com/in/krismcginnes
                 </FindMeLink>
               </li>
               <li className="hidden print:inline">
