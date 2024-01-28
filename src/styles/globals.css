@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    min-width: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+    @apply font-heading;
+  }
+
+  body {
+    @apply bg-gray-50 antialiased accent-green-500 selection:bg-green-600;
+    @apply selection:text-white dark:bg-gray-900 selection:dark:bg-green-700;
+    @apply print:bg-transparent;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-secondary rounded-xl p-6 shadow-sm dark:shadow-none;
+    @apply print:break-inside-avoid print:bg-transparent print:p-0 print:shadow-none;
+  }
+
+  .button {
+    @apply flex justify-center rounded-md bg-green-700 px-6 py-3 text-center !font-heading font-medium tracking-wider text-white no-underline transition-colors [text-wrap:balance] hover:bg-green-600 dark:bg-green-700;
+    @apply print:bg-transparent print:p-0;
+  }
+
+  .button-secondary {
+    @apply flex items-center justify-center gap-2 rounded-md bg-gray-200 px-6 py-3 text-center !font-heading font-medium tracking-wider text-gray-950 no-underline transition-colors [text-wrap:balance] hover:bg-gray-300;
+    @apply dark:bg-gray-800 dark:text-white hover:dark:bg-gray-700;
+    @apply print:gap-1 print:bg-transparent print:p-0;
+  }
+
+  .prose-default {
+    @apply prose-neutral font-serif tracking-wide dark:prose-invert;
+  }
+
+  .section-header {
+    @apply text-secondary font-mono text-lg font-medium;
+    @apply print:font-heading print:text-lg print:font-bold;
+  }
+}
+
+@layer utilities {
+  .py-page {
+    @apply py-4 md:py-12;
+  }
+
+  .bg-secondary {
+    @apply bg-white dark:bg-gray-800;
+  }
+
+  .text-body {
+    @apply text-gray-950 dark:text-gray-50;
+  }
+
+  .text-secondary {
+    @apply text-green-700 dark:text-green-200 print:text-gray-900;
+  }
+  .text-tertiary {
+    @apply text-green-500 dark:text-green-500 print:text-gray-800;
+  }
+  .text-muted {
+    @apply text-gray-500 dark:text-gray-400;
+  }
+}

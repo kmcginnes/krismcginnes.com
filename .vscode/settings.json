@@ -1,0 +1,22 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.words": [
+    "fontawesome",
+    "Fonticons",
+    "frontmatter",
+    "FSMB",
+    "Influxer",
+    "kmcginnes",
+    "krismcginnes",
+    "McGinnes",
+    "Merch",
+    "nextjs",
+    "Silverlight",
+    "tailwindcss",
+    "typecheck"
+  ]
+}
