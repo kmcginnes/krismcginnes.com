@@ -22,7 +22,7 @@ export default function HomePage() {
   return (
     <main className="py-page flex flex-col gap-12 print:gap-8 print:py-0">
       <section>
-        <div className="flex items-center gap-4 print:items-start">
+        <div className="flex items-center gap-4">
           <Image
             src="/profile.jpg"
             alt="Profile"
@@ -30,36 +30,35 @@ export default function HomePage() {
             height="256"
             width="256"
           />
-          <div className="space-y-4 font-heading">
+          <div className="space-y-4">
             <div>
-              <h1 className="text-3xl font-black tracking-wide sm:text-4xl">
-                Kris McGinnes
-              </h1>
-              <h2 className="text-secondary text-xl font-medium">
-                Engineer & Designer
-              </h2>
+              <h1 className="large-header">Kris McGinnes</h1>
+              <h2 className="section-header">Engineer & Designer</h2>
             </div>
           </div>
         </div>
       </section>
-      <section className="space-y-8">
-        <div className="prose-default prose prose-lg">
+      <section className="space-y-10">
+        <div className="prose-default prose sm:prose-lg print:prose-sm">
           <p>
-            Hi, my name is Kris and I got in to coding because I wanted to make
-            everyone's computing world <strong>better</strong>. The status quo
-            options were simply not good enough, and I, arrogantly, thought I
-            could do better.
+            Since the start of my career in 2007, I have had the privilege to
+            work with large and small companies all aiming to{" "}
+            <strong>enrich people’s lives</strong> with thoughtfully crafted
+            products.
           </p>
           <p>
-            It turns out building software is hard. To do it well takes{" "}
-            <strong>focus</strong>, <strong>dedication</strong>, and{" "}
-            <strong>support</strong>. I have been lucky enough to work with many
-            teams who share the vision that software can be{" "}
-            <strong>great</strong>.
+            I most enjoy building software at the intersection of{" "}
+            <strong>design</strong> and <strong>engineering</strong> - things
+            that look good but are also built well under the hood.
+          </p>
+          <p>
+            When I’m not at the computer I’m usually brewing coffee, watching
+            movies, hanging out with my wife and dog, or out walking around the
+            city.
           </p>
         </div>
         <div className="space-y-4">
-          <h2 className="section-header">Find Me Online</h2>
+          <h2 className="section-header">Ge in Touch</h2>
           <ul className="text-muted text-body flex flex-wrap gap-4 print:gap-2">
             <li>
               <FindMeLink
@@ -118,8 +117,8 @@ export default function HomePage() {
           </ul>
         </div>
       </section>
-      <section className="flex flex-col gap-8 print:gap-4">
-        <h1 className="flex text-3xl font-black tracking-wider">Skills</h1>
+      <section className="flex flex-col gap-10 print:gap-4">
+        <h1 className="large-header">Skills</h1>
 
         <section className="space-y-4">
           <h2 className="section-header">Tech & Frameworks</h2>
@@ -159,7 +158,8 @@ export default function HomePage() {
               </div>
             </li>
           </ul>
-
+        </section>
+        <section className="space-y-4">
           <h2 className="section-header">Applications & Tools</h2>
 
           <ul className="flex flex-row flex-wrap items-center gap-2 print:gap-3">
@@ -198,8 +198,8 @@ export default function HomePage() {
         </section>
       </section>
 
-      <section className="flex flex-col gap-8 print:gap-4">
-        <h1 className="flex text-3xl font-black tracking-wider">Work</h1>
+      <section className="flex flex-col gap-10 print:gap-4">
+        <h1 className="large-header">Experience</h1>
 
         <section className="space-y-4">
           <h2 className="section-header">
@@ -440,7 +440,7 @@ function FindMeLink({
     <a
       href="https://github.com/kmcginnes"
       target="_blank"
-      className="text-muted hover:text-body flex items-center gap-1 transition-colors"
+      className="text-muted hover:text-body print:text-body flex items-center gap-1 transition-colors"
       {...props}
     >
       <Icon className="h-5 w-5 print:h-4 print:w-4" />
@@ -480,7 +480,7 @@ function ExperienceBox({
         <h1 className="text-xl font-extrabold tracking-wide print:text-base">
           {company}
         </h1>
-        <h2 className="text-secondary flex-shrink-0 font-mono print:font-heading">
+        <h2 className="text-secondary flex-shrink-0 text-balance text-base font-medium tracking-wide print:text-lg print:font-bold">
           {date}
         </h2>
       </header>

@@ -13,8 +13,7 @@
   h4,
   h5,
   h6 {
-    text-wrap: balance;
-    @apply font-heading;
+    @apply text-balance;
   }
 
   body {
@@ -31,23 +30,28 @@
   }
 
   .button {
-    @apply flex justify-center rounded-md bg-green-700 px-6 py-3 text-center !font-heading font-medium tracking-wider text-white no-underline transition-colors [text-wrap:balance] hover:bg-green-600 dark:bg-green-700;
-    @apply print:bg-transparent print:p-0;
+    @apply flex justify-center text-balance rounded-md bg-green-700 px-6 py-3 text-center !font-sans font-medium tracking-wider text-white no-underline transition-colors hover:bg-green-600 dark:bg-green-700;
+    @apply print:text-body print:bg-transparent print:p-0;
   }
 
   .button-secondary {
-    @apply flex items-center justify-center gap-2 rounded-md bg-gray-200 px-6 py-3 text-center !font-heading font-medium tracking-wider text-gray-950 no-underline transition-colors [text-wrap:balance] hover:bg-gray-300;
+    @apply flex items-center justify-center gap-2 text-balance rounded-md bg-gray-200 px-6 py-3 text-center !font-sans font-medium tracking-wider text-gray-950 no-underline transition-colors hover:bg-gray-300;
     @apply dark:bg-gray-800 dark:text-white hover:dark:bg-gray-700;
-    @apply print:gap-1 print:bg-transparent print:p-0;
+    @apply print:text-body print:gap-1 print:bg-transparent print:p-0;
   }
 
   .prose-default {
-    @apply prose-neutral font-serif tracking-wide dark:prose-invert;
+    @apply prose-neutral tracking-wide dark:prose-invert;
+    @apply prose-h4:font-bold prose-h4:tracking-wide;
+    @apply prose-p:font-serif;
+  }
+
+  .large-header {
+    @apply text-balance text-3xl font-black tracking-wide sm:text-4xl;
   }
 
   .section-header {
-    @apply text-secondary font-mono text-lg font-medium;
-    @apply print:font-heading print:text-lg print:font-bold;
+    @apply text-secondary text-balance text-lg font-bold tracking-wide print:text-lg print:font-bold;
   }
 }
 
@@ -65,7 +69,7 @@
   }
 
   .text-secondary {
-    @apply text-green-700 dark:text-green-200 print:text-gray-900;
+    @apply text-green-600 dark:text-green-200 print:text-gray-900;
   }
   .text-tertiary {
     @apply text-green-500 dark:text-green-500 print:text-gray-800;
