@@ -1,5 +1,7 @@
 # Developer Portfolio
 
+[Kris McGinnes Portfolio](https://krismcginnes.com)
+
 This is my developer portfolio website, which started as a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
 
 ## Goals
