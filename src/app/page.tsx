@@ -20,7 +20,7 @@ import {
 
 export default function HomePage() {
   return (
-    <main className="py-page flex flex-col gap-12 print:gap-8 print:py-0">
+    <main className="py-page flex flex-col gap-6 sm:gap-10 print:gap-8 print:py-0">
       <section>
         <div className="flex items-center gap-4">
           <Image
@@ -38,7 +38,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="space-y-10">
+      <section className="space-y-6 sm:space-y-10">
         <div className="prose-default prose sm:prose-lg print:prose-sm">
           <p>
             Since the start of my career in 2007, I have had the privilege to
@@ -117,7 +117,7 @@ export default function HomePage() {
           </ul>
         </div>
       </section>
-      <section className="flex flex-col gap-10 print:gap-4">
+      <section className="flex flex-col gap-6 sm:gap-10 print:gap-4">
         <h1 className="large-header">Skills</h1>
 
         <section className="space-y-4">
@@ -198,7 +198,7 @@ export default function HomePage() {
         </section>
       </section>
 
-      <section className="flex flex-col gap-10 print:gap-4">
+      <section className="flex flex-col gap-6 sm:gap-10 print:gap-4">
         <h1 className="large-header">Experience</h1>
 
         <section className="space-y-4">
