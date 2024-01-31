@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="text-muted prose py-8 print:hidden">
+    <footer className="text-muted prose prose-sm prose-zinc py-8 dark:prose-invert print:hidden">
       <p>&copy; {new Date().getFullYear()} Kris McGinnes</p>
       <p>
         Built using <a href="https://nextjs.org/">Next.js</a> and deployed on{" "}
