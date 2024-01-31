@@ -1,6 +1,7 @@
 import "~/styles/globals.css"
 import { Bitter, Nunito_Sans } from "next/font/google"
 import Footer from "./footer"
+import { env } from "~/env"
 
 const serif = Bitter({
   subsets: ["latin"],
@@ -16,6 +17,7 @@ export const metadata = {
   title: "Kris McGinnes Portfolio",
   description:
     "I most enjoy building software at the intersection of design and engineering - things that look good but are also built well under the hood.",
+  metadataBase: env.SITE_URL && new URL(env.SITE_URL),
 }
 
 export default function RootLayout({
