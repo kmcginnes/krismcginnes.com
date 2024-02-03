@@ -2,6 +2,7 @@ import "~/styles/globals.css"
 import { Bitter, Nunito_Sans } from "next/font/google"
 import Footer from "./footer"
 import { env } from "~/env"
+import { Analytics } from "@vercel/analytics/react"
 
 const serif = Bitter({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
