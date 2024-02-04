@@ -10,7 +10,7 @@ export default function Footer() {
         <a href="https://fonts.google.com/specimen/Bitter?query=bitter">
           Bitter
         </a>
-        . Icons are sources from{" "}
+        . Icons are sourced from{" "}
         <a href="https://fontawesome.com">Font Awesome</a> and{" "}
         <a href="https://simpleicons.org">Simple Icons</a>.
       </p>
