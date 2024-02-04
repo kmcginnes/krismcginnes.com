@@ -3,6 +3,7 @@ import { Bitter, Nunito_Sans } from "next/font/google"
 import Footer from "./footer"
 import { env } from "~/env"
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const serif = Bitter({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
