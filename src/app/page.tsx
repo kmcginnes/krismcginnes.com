@@ -17,6 +17,7 @@ import {
   VSCodeIcon,
   XcodeIcon,
 } from "./icons"
+import profilePic from "./../../public/profile.jpg"
 
 export default function HomePage() {
   return (
@@ -24,11 +25,10 @@ export default function HomePage() {
       <section>
         <div className="flex items-center gap-4">
           <Image
-            src="/profile.jpg"
+            src={profilePic}
             alt="Profile"
             className="h-24 w-24 flex-shrink-0 rounded-full border-2 border-white print:border-0"
-            height="256"
-            width="256"
+            priority
           />
           <div className="space-y-4">
             <div>
