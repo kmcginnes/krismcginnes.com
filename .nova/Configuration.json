@@ -1,3 +1,4 @@
 {
-  "workspace.color": 12
+  "editor.default_syntax" : "tsx",
+  "workspace.color" : 3
 }
