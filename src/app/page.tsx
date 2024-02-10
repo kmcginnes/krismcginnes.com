@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { type PropsWithChildren } from "react"
+import { ComponentProps, type PropsWithChildren } from "react"
 import {
   EmailIcon,
   FigmaIcon,
@@ -39,19 +39,19 @@ export default function HomePage() {
         </div>
       </section>
       <section className="space-y-6 sm:space-y-10">
-        <div className="prose-default prose sm:prose-lg print:prose-sm">
-          <p>
+        <div className="text-body max-w-2xl sm:text-lg print:text-sm">
+          <p className="my-3">
             Since the start of my career in 2007, I have had the privilege to
             work with large and small companies all aiming to{" "}
             <strong>enrich people’s lives</strong> with thoughtfully crafted
             products.
           </p>
-          <p>
+          <p className="my-3">
             I most enjoy building software at the intersection of{" "}
             <strong>design</strong> and <strong>engineering</strong> - things
             that look good but are also built well under the hood.
           </p>
-          <p>
+          <p className="my-3">
             When I’m not at the computer I’m usually brewing coffee, watching
             movies, hanging out with my wife and dog, or out walking around the
             city.
@@ -209,7 +209,7 @@ export default function HomePage() {
           <ul className="grid gap-4 md:grid-cols-2 print:grid-cols-1">
             <li>
               <ExperienceBox company="Influxer" date="2023">
-                <h4>Technical Lead</h4>
+                <ExperienceHeader>Technical Lead</ExperienceHeader>
                 <p>
                   Led the team rewriting the existing Shopify website with an
                   emphasis on design and performance. The project was completed
@@ -222,7 +222,7 @@ export default function HomePage() {
             </li>
             <li>
               <ExperienceBox company="Spend Life Wisely" date="2022 - 2023">
-                <h4>Lead Mobile Developer</h4>
+                <ExperienceHeader>Lead Mobile Developer</ExperienceHeader>
                 <p>
                   Developed the SwiftUI mobile app for the social networking app
                   Our Community. I moved the app to a simpler architecture and
@@ -244,7 +244,7 @@ export default function HomePage() {
           <ul className="grid gap-4 md:grid-cols-2 print:grid-cols-1">
             <li>
               <ExperienceBox company="OxeFit" date="2021 - 2022">
-                <h4>Mobile App Developer</h4>
+                <ExperienceHeader>Mobile App Developer</ExperienceHeader>
                 <p>
                   Implemented custom and complex UI animations and interactions
                   in a React Native video platform app. Unfortunately, it was
@@ -260,7 +260,7 @@ export default function HomePage() {
                 company="Federation of State Medical Boards (FSMB)"
                 date="2020 - 2021"
               >
-                <h4>Front End Developer</h4>
+                <ExperienceHeader>Front End Developer</ExperienceHeader>
                 <p>
                   Implemented new features and polished existing UI in a .NET
                   web app designed to connect nurses and doctors to hospitals in
@@ -276,7 +276,7 @@ export default function HomePage() {
                 company="Toyota of North America"
                 date="2019 - 2020"
               >
-                <h4>Developer & Designer</h4>
+                <ExperienceHeader>Developer & Designer</ExperienceHeader>
                 <p>
                   Worked with a large team of UX designers on high fidelity
                   prototypes using the iPad and SwiftUI.
@@ -288,7 +288,7 @@ export default function HomePage() {
             </li>
             <li>
               <ExperienceBox company="Eagle Metal" date="2018 - 2019">
-                <h4>Developer</h4>
+                <ExperienceHeader>Developer</ExperienceHeader>
                 <p>
                   Polished the UI and rewrote the data layer for their roof
                   truss planning & ordering app.
@@ -300,7 +300,7 @@ export default function HomePage() {
             </li>
             <li>
               <ExperienceBox company="WatchGuard Video" date="2014 - 2018">
-                <h4>Developer</h4>
+                <ExperienceHeader>Developer</ExperienceHeader>
                 <p>
                   Worked on various projects that interact directly with USB
                   devices, manipulate video files, and reliably sync large files
@@ -313,7 +313,7 @@ export default function HomePage() {
             </li>
             <li>
               <ExperienceBox company="Thompson Reuters" date="2013 - 2014">
-                <h4>Developer</h4>
+                <ExperienceHeader>Developer</ExperienceHeader>
                 <p>
                   Audited security practices across organization, enhanced tax
                   form management software dealing directly with PDF files
@@ -331,7 +331,7 @@ export default function HomePage() {
           <h2 className="section-header">Software Consultant with Excolo</h2>
 
           <ExperienceBox company="SpaceX" date="2013">
-            <h4>Developer</h4>
+            <ExperienceHeader>Developer</ExperienceHeader>
             <p>
               Hired and managed team that built out a data center product
               procurement website using ASP.net MVC.
@@ -347,7 +347,7 @@ export default function HomePage() {
           <ul className="grid gap-4 md:grid-cols-2 print:grid-cols-1">
             <li>
               <ExperienceBox company="Cisco Systems" date="2012 - 2013">
-                <h4>Team Lead</h4>
+                <ExperienceHeader>Team Lead</ExperienceHeader>
                 <p>
                   Hired and managed team that built out a data center product
                   procurement website using ASP.net MVC.
@@ -356,7 +356,7 @@ export default function HomePage() {
             </li>
             <li>
               <ExperienceBox company="Cisco Systems" date="2010 - 2012">
-                <h4>Developer</h4>
+                <ExperienceHeader>Developer</ExperienceHeader>
                 <p>
                   Enhanced the existing Silverlight app that would visually
                   manage data center resources with a drag and drop UI.
@@ -372,7 +372,7 @@ export default function HomePage() {
           <ul className="grid gap-4 md:grid-cols-2 print:grid-cols-1">
             <li>
               <ExperienceBox company="Allegro Development" date="2007 - 2010">
-                <h4>Software Developer</h4>
+                <ExperienceHeader>Software Developer</ExperienceHeader>
                 <p>
                   Rewrote and enhanced a complex forecasting module written in
                   C# which was part of a very large oil & gas management suite.
@@ -381,7 +381,7 @@ export default function HomePage() {
             </li>
             <li>
               <ExperienceBox company="FedEx Kinkos" date="2007">
-                <h4>Developer</h4>
+                <ExperienceHeader>Developer</ExperienceHeader>
                 <p>
                   Worked with a team to transform large data sets using visual
                   tools.
@@ -398,7 +398,7 @@ export default function HomePage() {
             company="University of Texas at Dallas"
             date="2002 - 2007"
           >
-            <h4>B.S. Computer Science</h4>
+            <ExperienceHeader>B.S. Computer Science</ExperienceHeader>
             <p>
               <strong>Notable Classes:</strong> Object Oriented Analysis &
               Design, Computer Graphics, Data Structures
@@ -485,9 +485,19 @@ function ExperienceBox({
         </h2>
       </header>
       <hr className="border-green-500 print:hidden" />
-      <div className="prose-default prose flex h-full max-w-none flex-col">
+      <div className="flex h-full flex-col gap-3 font-serif text-base">
         {children}
       </div>
     </article>
+  )
+}
+
+type ExperienceHeaderProps = ComponentProps<"h1">
+function ExperienceHeader(props: ExperienceHeaderProps) {
+  return (
+    <h3
+      className="text-balance font-sans font-semibold tracking-wide"
+      {...props}
+    />
   )
 }

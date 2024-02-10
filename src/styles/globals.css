@@ -40,11 +40,11 @@
     @apply print:text-body print:gap-1 print:bg-transparent print:p-0;
   }
 
-  .prose-default {
+  /* .prose-default {
     @apply prose-neutral tracking-wide dark:prose-invert;
     @apply prose-h4:font-bold prose-h4:tracking-wide;
     @apply prose-p:font-serif;
-  }
+  } */
 
   .large-header {
     @apply text-balance text-3xl font-black tracking-wide sm:text-4xl;
