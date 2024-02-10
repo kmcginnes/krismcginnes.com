@@ -1,19 +1,34 @@
+import { ComponentProps } from "react"
+
 export default function Footer() {
   return (
-    <footer className="text-muted prose prose-sm prose-zinc py-8 dark:prose-invert print:hidden">
-      <p>&copy; {new Date().getFullYear()} Kris McGinnes</p>
+    <footer className="text-muted flex max-w-xl flex-col gap-4 text-balance py-8 text-sm print:hidden">
       <p>
-        Built using <a href="https://nextjs.org/">Next.js</a> and deployed on{" "}
-        <a href="https://vercel.com/home">Vercel</a>. Fonts used are{" "}
-        <a href="https://fonts.google.com/specimen/Nunito+Sans">Nonito Sans</a>{" "}
+        Built using <Link href="https://nextjs.org/">Next.js</Link> and deployed
+        on <Link href="https://vercel.com/home">Vercel</Link>. Fonts used are{" "}
+        <Link href="https://fonts.google.com/specimen/Nunito+Sans">
+          Nonito Sans
+        </Link>{" "}
         and{" "}
-        <a href="https://fonts.google.com/specimen/Bitter?query=bitter">
+        <Link href="https://fonts.google.com/specimen/Bitter?query=bitter">
           Bitter
-        </a>
+        </Link>
         . Icons are sourced from{" "}
-        <a href="https://fontawesome.com">Font Awesome</a> and{" "}
-        <a href="https://simpleicons.org">Simple Icons</a>.
+        <Link href="https://fontawesome.com">Font Awesome</Link> and{" "}
+        <Link href="https://simpleicons.org">Simple Icons</Link>.
       </p>
+      <p>&copy; {new Date().getFullYear()} Kris McGinnes</p>
     </footer>
+  )
+}
+
+type LinkProps = ComponentProps<"a">
+
+function Link({ ...props }: LinkProps) {
+  return (
+    <a
+      className="text-emphasis font-medium underline underline-offset-2"
+      {...props}
+    ></a>
   )
 }

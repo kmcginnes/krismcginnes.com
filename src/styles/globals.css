@@ -64,6 +64,10 @@
     @apply bg-white dark:bg-gray-800;
   }
 
+  .text-emphasis {
+    @apply text-black dark:text-white;
+  }
+
   .text-body {
     @apply text-gray-950 dark:text-gray-50;
   }
