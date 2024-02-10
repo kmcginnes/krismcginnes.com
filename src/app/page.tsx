@@ -39,7 +39,7 @@ export default function HomePage() {
         </div>
       </section>
       <section className="space-y-6 sm:space-y-10">
-        <div className="text-body max-w-2xl leading-relaxed sm:text-lg print:text-sm">
+        <div className="max-w-2xl font-serif leading-7 tracking-wide sm:text-lg print:text-sm">
           <p className="my-3">
             Since the start of my career in 2007, I have had the privilege to
             work with large and small companies all aiming to{" "}
@@ -59,7 +59,7 @@ export default function HomePage() {
         </div>
         <div className="space-y-4">
           <h2 className="section-header">Get in Touch</h2>
-          <ul className="text-muted text-body flex flex-wrap gap-4 print:gap-2">
+          <ul className="text-muted flex flex-wrap gap-4 print:gap-2">
             <li>
               <FindMeLink
                 icon={EmailIcon}
@@ -440,7 +440,7 @@ function FindMeLink({
     <a
       href="https://github.com/kmcginnes"
       target="_blank"
-      className="text-muted hover:text-body print:text-body flex items-center gap-1 transition-colors"
+      className="text-muted hover:text-emphasis print:text-body flex items-center gap-1 transition-colors"
       {...props}
     >
       <Icon className="h-5 w-5 print:h-4 print:w-4" />
@@ -485,7 +485,7 @@ function ExperienceBox({
         </h2>
       </header>
       <hr className="border-green-500 print:hidden" />
-      <div className="flex h-full flex-col gap-3 font-serif text-base leading-relaxed">
+      <div className="flex h-full flex-col gap-3 font-serif text-base leading-7 tracking-wide">
         {children}
       </div>
     </article>
