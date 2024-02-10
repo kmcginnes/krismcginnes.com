@@ -39,7 +39,7 @@ export default function HomePage() {
         </div>
       </section>
       <section className="space-y-6 sm:space-y-10">
-        <div className="text-body max-w-2xl sm:text-lg print:text-sm">
+        <div className="text-body max-w-2xl leading-relaxed sm:text-lg print:text-sm">
           <p className="my-3">
             Since the start of my career in 2007, I have had the privilege to
             work with large and small companies all aiming to{" "}
@@ -485,7 +485,7 @@ function ExperienceBox({
         </h2>
       </header>
       <hr className="border-green-500 print:hidden" />
-      <div className="flex h-full flex-col gap-3 font-serif text-base">
+      <div className="flex h-full flex-col gap-3 font-serif text-base leading-relaxed">
         {children}
       </div>
     </article>
@@ -495,9 +495,6 @@ function ExperienceBox({
 type ExperienceHeaderProps = ComponentProps<"h1">
 function ExperienceHeader(props: ExperienceHeaderProps) {
   return (
-    <h3
-      className="text-balance font-sans font-semibold tracking-wide"
-      {...props}
-    />
+    <h3 className="text-balance font-sans font-bold tracking-wide" {...props} />
   )
 }
