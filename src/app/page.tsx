@@ -4,7 +4,7 @@ import {
   EmailIcon,
   FigmaIcon,
   GitHubIcon,
-  IconProps,
+  type IconProps,
   InstagramIcon,
   InternetIcon,
   LinkedInIcon,
@@ -480,7 +480,7 @@ function ExperienceBox({
         <h1 className="text-xl font-extrabold tracking-wide print:text-base">
           {company}
         </h1>
-        <h2 className="text-secondary flex-shrink-0 text-balance text-base font-medium tracking-wide print:text-lg print:font-bold">
+        <h2 className="text-secondary flex-shrink-0 text-balance text-base font-normal tracking-wide print:text-lg print:font-bold">
           {date}
         </h2>
       </header>

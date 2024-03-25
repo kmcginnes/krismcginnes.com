@@ -44,7 +44,7 @@
   .prose-default {
     @apply prose-neutral tracking-wide dark:prose-invert;
     @apply prose-h4:font-bold prose-h4:tracking-wide;
-    @apply prose-p:font-serif prose-p:font-light prose-strong:font-medium;
+    @apply prose-p:font-serif prose-p:font-light prose-strong:font-bold;
   }
 
   .large-header {
