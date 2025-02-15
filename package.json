@@ -10,6 +10,9 @@
     "start": "next start",
     "typecheck": "tsc --noEmit"
   },
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.7.3",
     "@vercel/analytics": "^1.5.0",
