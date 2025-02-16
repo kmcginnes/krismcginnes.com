@@ -1,10 +1,12 @@
 import Image from "next/image"
-import { type PropsWithChildren } from "react"
+import profilePic from "./../../public/profile.jpg"
 import {
   EmailIcon,
+  ExperienceBox,
+  ExternalLinkButton,
   FigmaIcon,
+  FindMeLink,
   GitHubIcon,
-  type IconProps,
   InstagramIcon,
   InternetIcon,
   LinkedInIcon,
@@ -12,13 +14,12 @@ import {
   NextIcon,
   ReactIcon,
   RemixIcon,
+  SkillButton,
   SwiftIcon,
   TailwindIcon,
   VSCodeIcon,
   XcodeIcon,
-} from "../components/icons"
-import profilePic from "./../../public/profile.jpg"
-import { ExperienceBox, SkillButton } from "~/components"
+} from "~/components"
 
 export default function HomePage() {
   return (
@@ -408,42 +409,5 @@ export default function HomePage() {
         </section>
       </section>
     </main>
-  )
-}
-
-type FindMeLinkProps = {
-  icon: React.ComponentType<IconProps>
-} & React.AnchorHTMLAttributes<HTMLAnchorElement>
-
-function FindMeLink({
-  children,
-  icon: Icon,
-  ...props
-}: PropsWithChildren<FindMeLinkProps>) {
-  return (
-    <a
-      href="https://github.com/kmcginnes"
-      target="_blank"
-      className="text-muted hover:text-body print:text-body flex items-center gap-1 transition-colors"
-      {...props}
-    >
-      <Icon className="h-5 w-5 print:h-4 print:w-4" />
-      <span className="hidden print:block">{children}</span>
-    </a>
-  )
-}
-
-type ExternalLinkButtonProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
-
-function ExternalLinkButton({
-  children,
-  ...props
-}: PropsWithChildren<ExternalLinkButtonProps>) {
-  return (
-    <footer className="flex grow items-end print:hidden">
-      <a target="_blank" className="button max-w-fit" {...props}>
-        {children}
-      </a>
-    </footer>
   )
 }
