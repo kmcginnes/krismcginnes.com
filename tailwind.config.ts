@@ -4,7 +4,6 @@ import colors from "tailwindcss/colors"
 
 export default {
   content: ["./src/**/*.tsx"],
-  future: { hoverOnlyWhenSupported: true },
   theme: {
     extend: {
       colors: {
