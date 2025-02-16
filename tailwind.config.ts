@@ -1,13 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 import { type Config } from "tailwindcss"
 import colors from "tailwindcss/colors"
-import { fontFamily } from "tailwindcss/defaultTheme"
 
 export default {
   content: ["./src/**/*.tsx"],
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
+  future: { hoverOnlyWhenSupported: true },
   theme: {
     extend: {
       colors: {
@@ -20,10 +17,7 @@ export default {
         indigo: colors.indigo,
         yellow: colors.yellow,
       },
-      fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-        serif: ["var(--font-serif)", ...fontFamily.serif],
-      },
+      fontFamily: { sans: ["var(--font-sans)"], serif: ["var(--font-serif)"] },
     },
   },
   plugins: [require("@tailwindcss/typography")],
