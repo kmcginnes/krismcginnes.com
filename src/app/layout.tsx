@@ -1,4 +1,4 @@
-import "~/app/globals.css"
+import "~/styles/globals.css"
 import { Bitter, Nunito_Sans } from "next/font/google"
 import Footer from "./footer"
 import { env } from "~/env"
