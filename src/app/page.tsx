@@ -16,8 +16,9 @@ import {
   TailwindIcon,
   VSCodeIcon,
   XcodeIcon,
-} from "./icons"
+} from "../components/icons"
 import profilePic from "./../../public/profile.jpg"
+import { ExperienceBox, SkillButton } from "~/components"
 
 export default function HomePage() {
   return (
@@ -410,23 +411,6 @@ export default function HomePage() {
   )
 }
 
-type SkillButtonProps = {
-  icon: React.ComponentType<IconProps>
-} & React.AnchorHTMLAttributes<HTMLAnchorElement>
-
-function SkillButton({
-  children,
-  icon: Icon,
-  ...props
-}: PropsWithChildren<SkillButtonProps>) {
-  return (
-    <a target="_blank" className="button-secondary" {...props}>
-      <Icon className="h-5 w-5 print:h-4 print:w-4" />
-      <span>{children}</span>
-    </a>
-  )
-}
-
 type FindMeLinkProps = {
   icon: React.ComponentType<IconProps>
 } & React.AnchorHTMLAttributes<HTMLAnchorElement>
@@ -461,33 +445,5 @@ function ExternalLinkButton({
         {children}
       </a>
     </footer>
-  )
-}
-
-type ExperienceBoxProps = {
-  company: string
-  date: string
-}
-
-function ExperienceBox({
-  company,
-  date,
-  children,
-}: PropsWithChildren<ExperienceBoxProps>) {
-  return (
-    <article className="card flex h-full flex-col gap-4 print:gap-2">
-      <header className="flex items-end justify-between gap-2 space-y-1">
-        <h1 className="text-xl font-extrabold tracking-wide print:text-base">
-          {company}
-        </h1>
-        <h2 className="text-secondary shrink-0 text-balance text-base font-normal tracking-wide print:text-lg print:font-bold">
-          {date}
-        </h2>
-      </header>
-      <hr className="border-green-500 print:hidden" />
-      <div className="prose-default prose flex h-full max-w-none flex-col">
-        {children}
-      </div>
-    </article>
   )
 }

@@ -19,7 +19,7 @@ export const metadata = {
   title: "Kris McGinnes Portfolio",
   description:
     "I most enjoy building software at the intersection of design and engineering - things that look good but are also built well under the hood.",
-  metadataBase: env.SITE_URL && new URL(env.SITE_URL),
+  metadataBase: env.SITE_URL ? new URL(env.SITE_URL) : undefined,
 }
 
 export default function RootLayout({
