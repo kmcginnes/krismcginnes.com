@@ -1,6 +1,78 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config '../../tailwind.config.ts';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility card {
+  @apply bg-secondary rounded-xl p-6 shadow-xs dark:shadow-none;
+  @apply print:break-inside-avoid print:bg-transparent print:p-0 print:shadow-none;
+}
+
+@utility button {
+  @apply flex justify-center text-balance rounded-md bg-green-700 px-4 py-2 text-center font-sans! font-medium tracking-wider text-white no-underline transition-colors hover:bg-green-600 dark:bg-green-700;
+  @apply print:text-body print:bg-transparent print:p-0;
+}
+
+@utility button-secondary {
+  @apply flex items-center justify-center gap-2 text-balance rounded-md bg-gray-200 px-4 py-2 text-center font-sans! font-medium tracking-wider text-gray-950 no-underline transition-colors hover:bg-gray-300;
+  @apply dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700;
+  @apply print:text-body print:gap-1 print:bg-transparent print:p-0;
+}
+
+@utility prose-default {
+  @apply prose-neutral tracking-wide dark:prose-invert;
+  @apply prose-h4:font-bold prose-h4:tracking-wide;
+  @apply prose-p:font-serif prose-p:font-light prose-strong:font-bold;
+}
+
+@utility large-header {
+  @apply text-balance text-3xl font-extrabold tracking-wide sm:text-4xl;
+}
+
+@utility section-header {
+  @apply text-secondary text-balance text-lg font-semibold tracking-wide print:text-lg print:font-bold;
+}
+
+@utility py-page {
+  @apply py-4 md:py-12;
+}
+
+@utility bg-secondary {
+  @apply bg-white dark:bg-gray-800;
+}
+
+@utility text-body {
+  @apply text-gray-950 dark:text-gray-50;
+}
+
+@utility text-secondary {
+  @apply text-green-600 dark:text-green-200 print:text-gray-900;
+}
+
+@utility text-tertiary {
+  @apply text-green-500 dark:text-green-500 print:text-gray-800;
+}
+
+@utility text-muted {
+  @apply text-gray-500 dark:text-gray-400;
+}
 
 @layer base {
   * {
@@ -19,63 +91,7 @@
 
   body {
     @apply bg-gray-50 antialiased accent-green-500 selection:bg-green-600;
-    @apply selection:text-white dark:bg-gray-900 selection:dark:bg-green-700;
+    @apply selection:text-white dark:bg-gray-900 dark:selection:bg-green-700;
     @apply print:bg-transparent;
-  }
-}
-
-@layer components {
-  .card {
-    @apply bg-secondary rounded-xl p-6 shadow-sm dark:shadow-none;
-    @apply print:break-inside-avoid print:bg-transparent print:p-0 print:shadow-none;
-  }
-
-  .button {
-    @apply flex justify-center text-balance rounded-md bg-green-700 px-4 py-2 text-center !font-sans font-medium tracking-wider text-white no-underline transition-colors hover:bg-green-600 dark:bg-green-700;
-    @apply print:text-body print:bg-transparent print:p-0;
-  }
-
-  .button-secondary {
-    @apply flex items-center justify-center gap-2 text-balance rounded-md bg-gray-200 px-4 py-2 text-center !font-sans font-medium tracking-wider text-gray-950 no-underline transition-colors hover:bg-gray-300;
-    @apply dark:bg-gray-800 dark:text-white hover:dark:bg-gray-700;
-    @apply print:text-body print:gap-1 print:bg-transparent print:p-0;
-  }
-
-  .prose-default {
-    @apply prose-neutral tracking-wide dark:prose-invert;
-    @apply prose-h4:font-bold prose-h4:tracking-wide;
-    @apply prose-p:font-serif prose-p:font-light prose-strong:font-bold;
-  }
-
-  .large-header {
-    @apply text-balance text-3xl font-extrabold tracking-wide sm:text-4xl;
-  }
-
-  .section-header {
-    @apply text-secondary text-balance text-lg font-semibold tracking-wide print:text-lg print:font-bold;
-  }
-}
-
-@layer utilities {
-  .py-page {
-    @apply py-4 md:py-12;
-  }
-
-  .bg-secondary {
-    @apply bg-white dark:bg-gray-800;
-  }
-
-  .text-body {
-    @apply text-gray-950 dark:text-gray-50;
-  }
-
-  .text-secondary {
-    @apply text-green-600 dark:text-green-200 print:text-gray-900;
-  }
-  .text-tertiary {
-    @apply text-green-500 dark:text-green-500 print:text-gray-800;
-  }
-  .text-muted {
-    @apply text-gray-500 dark:text-gray-400;
   }
 }

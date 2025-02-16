@@ -27,7 +27,7 @@ export default function HomePage() {
           <Image
             src={profilePic}
             alt="Profile"
-            className="h-24 w-24 flex-shrink-0 rounded-full border-2 border-white print:border-0"
+            className="h-24 w-24 shrink-0 rounded-full border-2 border-white print:border-0"
             priority
           />
           <div className="space-y-4">
@@ -480,7 +480,7 @@ function ExperienceBox({
         <h1 className="text-xl font-extrabold tracking-wide print:text-base">
           {company}
         </h1>
-        <h2 className="text-secondary flex-shrink-0 text-balance text-base font-normal tracking-wide print:text-lg print:font-bold">
+        <h2 className="text-secondary shrink-0 text-balance text-base font-normal tracking-wide print:text-lg print:font-bold">
           {date}
         </h2>
       </header>
