@@ -61,7 +61,7 @@ export default function HomePage() {
         </div>
         <div className="space-y-4">
           <h2 className="section-header">Get in Touch</h2>
-          <ul className="text-muted text-body flex flex-wrap gap-4 print:gap-2">
+          <ul className="text-muted flex flex-wrap gap-4 print:gap-2">
             <li>
               <FindMeLink
                 icon={EmailIcon}

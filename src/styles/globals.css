@@ -1,6 +1,12 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @config '../../tailwind.config.ts';
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --font-sans: var(--font-nunito);
+  --font-serif: var(--font-bitter);
+}
 
 @utility card {
   @apply bg-secondary rounded-xl p-6 shadow-xs dark:shadow-none;
@@ -8,28 +14,28 @@
 }
 
 @utility button {
-  @apply flex justify-center text-balance rounded-md bg-green-700 px-4 py-2 text-center font-sans! font-medium tracking-wider text-white no-underline transition-colors hover:bg-green-600 dark:bg-green-700;
+  @apply flex justify-center rounded-md bg-green-700 px-4 py-2 text-center font-sans! font-medium tracking-wider text-balance text-white no-underline transition-colors hover:bg-green-600 dark:bg-green-700;
   @apply print:text-body print:bg-transparent print:p-0;
 }
 
 @utility button-secondary {
-  @apply flex items-center justify-center gap-2 text-balance rounded-md bg-gray-200 px-4 py-2 text-center font-sans! font-medium tracking-wider text-gray-950 no-underline transition-colors hover:bg-gray-300;
+  @apply flex items-center justify-center gap-2 rounded-md bg-gray-200 px-4 py-2 text-center font-sans! font-medium tracking-wider text-balance text-gray-950 no-underline transition-colors hover:bg-gray-300;
   @apply dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700;
   @apply print:text-body print:gap-1 print:bg-transparent print:p-0;
 }
 
 @utility prose-default {
-  @apply prose-neutral tracking-wide dark:prose-invert;
+  @apply prose-neutral dark:prose-invert tracking-wide;
   @apply prose-h4:font-bold prose-h4:tracking-wide;
   @apply prose-p:font-serif prose-p:font-light prose-strong:font-bold;
 }
 
 @utility large-header {
-  @apply text-balance text-3xl font-extrabold tracking-wide sm:text-4xl;
+  @apply text-3xl font-extrabold tracking-wide text-balance sm:text-4xl;
 }
 
 @utility section-header {
-  @apply text-secondary text-balance text-lg font-semibold tracking-wide print:text-lg print:font-bold;
+  @apply text-secondary text-lg font-semibold tracking-wide text-balance print:text-lg print:font-bold;
 }
 
 @utility py-page {

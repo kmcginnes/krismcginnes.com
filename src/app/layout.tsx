@@ -7,12 +7,12 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const serif = Bitter({
   subsets: ["latin"],
-  variable: "--font-serif",
+  variable: "--font-bitter",
 })
 
 const sans = Nunito_Sans({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-nunito",
 })
 
 export const metadata = {

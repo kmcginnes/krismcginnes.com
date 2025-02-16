@@ -17,8 +17,6 @@ export default {
         indigo: colors.indigo,
         yellow: colors.yellow,
       },
-      fontFamily: { sans: ["var(--font-sans)"], serif: ["var(--font-serif)"] },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
 } satisfies Config
