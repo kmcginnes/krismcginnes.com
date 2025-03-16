@@ -39,7 +39,7 @@ export function ExperienceTitle(props: PropsWithChildren) {
 
 export function ExperienceDate(props: PropsWithChildren) {
   return (
-    <h2 className="text-secondary shrink-0 text-base font-normal tracking-wide text-balance print:text-lg print:font-bold">
+    <h2 className="text-secondary shrink-0 text-base font-normal tracking-wide text-balance print:text-lg print:font-bold print:text-black">
       {props.children}
     </h2>
   )

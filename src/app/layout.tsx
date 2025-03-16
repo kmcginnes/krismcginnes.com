@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`text-body min-h-screen px-4 font-sans sm:px-8 md:mx-auto md:max-w-5xl md:px-12 ${serif.variable} ${sans.variable}`}
+        className={`bg-default accent-accent selection:bg-selection text-body min-h-screen px-4 font-sans antialiased selection:text-white sm:px-8 md:mx-auto md:max-w-5xl md:px-12 print:bg-transparent ${serif.variable} ${sans.variable}`}
       >
         {children}
         <Footer />

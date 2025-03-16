@@ -1,11 +1,51 @@
 @import "tailwindcss";
-
-@config '../../tailwind.config.ts';
 @plugin "@tailwindcss/typography";
 
 @theme inline {
   --font-sans: var(--font-nunito);
   --font-serif: var(--font-bitter);
+
+  --color-accent: var(--color-emerald-500);
+
+  /* Background Colors */
+  --background-color-default: light-dark(
+    var(--color-zinc-50),
+    var(--color-zinc-900)
+  );
+  --background-color-secondary: light-dark(
+    var(--color-white),
+    var(--color-zinc-800)
+  );
+  --background-color-selection: light-dark(
+    var(--color-emerald-600),
+    var(--color-emerald-700)
+  );
+
+  /* Text Colors */
+  --text-color-body: light-dark(var(--color-zinc-950), var(--color-zinc-50));
+  --text-color-secondary: light-dark(
+    var(--color-emerald-600),
+    var(--color-emerald-200)
+  );
+  --text-color-tertiary: light-dark(
+    var(--color-emerald-500),
+    var(--color-emerald-500)
+  );
+  --text-color-muted: light-dark(var(--color-zinc-500), var(--color-zinc-400));
+
+  /* Button Colors */
+  --background-color-button: var(--color-emerald-700);
+  --background-color-button-hover: var(--color-emerald-600);
+  --text-color-button: var(--color-white);
+
+  --background-color-button-secondary:
+    light-dark{var(--color-zinc-200), var(--color-zinc-800)};
+
+  --background-color-button-secondary-hover:
+    light-dark{var(--color-zinc-300), var(--color-zinc-700)};
+
+  --text-color-button-secondary:
+    light-dark{var(--color-zinc-950), var(--color-white)};
 }
 
 @utility card {
@@ -14,13 +54,12 @@
 }
 
 @utility button {
-  @apply flex justify-center rounded-md bg-green-700 px-4 py-2 text-center font-sans! font-medium tracking-wider text-balance text-white no-underline transition-colors hover:bg-green-600 dark:bg-green-700;
+  @apply bg-button text-button hover:bg-button-hover flex justify-center rounded-md px-4 py-2 text-center font-sans! font-medium tracking-wider text-balance no-underline transition-colors;
   @apply print:text-body print:bg-transparent print:p-0;
 }
 
 @utility button-secondary {
-  @apply flex items-center justify-center gap-2 rounded-md bg-gray-200 px-4 py-2 text-center font-sans! font-medium tracking-wider text-balance text-gray-950 no-underline transition-colors hover:bg-gray-300;
-  @apply dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700;
+  @apply bg-button-secondary text-button-secondary hover:bg-button-secondary-hover flex items-center justify-center gap-2 rounded-md px-4 py-2 text-center font-sans! font-medium tracking-wider text-balance no-underline transition-colors;
   @apply print:text-body print:gap-1 print:bg-transparent print:p-0;
 }
 
@@ -42,24 +81,10 @@
   @apply py-4 md:py-12;
 }
 
-@utility bg-secondary {
-  @apply bg-white dark:bg-gray-800;
-}
-
-@utility text-body {
-  @apply text-gray-950 dark:text-gray-50;
-}
-
-@utility text-secondary {
-  @apply text-green-600 dark:text-green-200 print:text-gray-900;
-}
-
-@utility text-tertiary {
-  @apply text-green-500 dark:text-green-500 print:text-gray-800;
-}
-
-@utility text-muted {
-  @apply text-gray-500 dark:text-gray-400;
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
 }
 
 @layer base {
@@ -75,11 +100,5 @@
   h5,
   h6 {
     @apply text-balance;
-  }
-
-  body {
-    @apply bg-gray-50 antialiased accent-green-500 selection:bg-green-600;
-    @apply selection:text-white dark:bg-gray-900 dark:selection:bg-green-700;
-    @apply print:bg-transparent;
   }
 }
