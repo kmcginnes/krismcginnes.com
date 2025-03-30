@@ -1,16 +1,11 @@
 import "~/styles/globals.css"
-import { Bitter, Nunito_Sans } from "next/font/google"
+import { Inter } from "next/font/google"
 import Footer from "./footer"
 import { env } from "~/env"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
-const serif = Bitter({
-  subsets: ["latin"],
-  variable: "--font-bitter",
-})
-
-const sans = Nunito_Sans({
+const sans = Inter({
   subsets: ["latin"],
   variable: "--font-nunito",
 })
@@ -30,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-default accent-accent selection:bg-selection text-body min-h-screen px-4 font-sans antialiased selection:text-white sm:px-8 md:mx-auto md:max-w-5xl md:px-12 print:bg-transparent ${serif.variable} ${sans.variable}`}
+        className={`bg-default accent-accent selection:bg-selection text-body min-h-screen px-4 font-sans antialiased selection:text-white sm:px-8 md:mx-auto md:max-w-5xl md:px-12 print:bg-transparent ${sans.variable}`}
       >
         {children}
         <Footer />

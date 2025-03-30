@@ -22,63 +22,68 @@
   );
 
   /* Text Colors */
-  --text-color-body: light-dark(var(--color-zinc-950), var(--color-zinc-50));
+  --text-color-body: light-dark(var(--color-zinc-600), var(--color-zinc-400));
   --text-color-secondary: light-dark(
     var(--color-emerald-600),
-    var(--color-emerald-200)
+    var(--color-emerald-300)
   );
   --text-color-tertiary: light-dark(
     var(--color-emerald-500),
     var(--color-emerald-500)
   );
   --text-color-muted: light-dark(var(--color-zinc-500), var(--color-zinc-400));
+  --text-color-emphasis: light-dark(
+    var(--color-zinc-950),
+    var(--color-zinc-50)
+  );
 
   /* Button Colors */
+
   --background-color-button: var(--color-emerald-700);
   --background-color-button-hover: var(--color-emerald-600);
   --text-color-button: var(--color-white);
 
-  --background-color-button-secondary:
-    light-dark{var(--color-zinc-200), var(--color-zinc-800)};
+  --background-color-button-secondary: light-dark(
+    var(--color-zinc-200),
+    var(--color-zinc-800)
+  );
 
-  --background-color-button-secondary-hover:
-    light-dark{var(--color-zinc-300), var(--color-zinc-700)};
+  --background-color-button-secondary-hover: light-dark(
+    var(--color-zinc-300),
+    var(--color-zinc-700)
+  );
 
-  --text-color-button-secondary:
-    light-dark{var(--color-zinc-950), var(--color-white)};
-}
-
-@utility card {
-  @apply bg-secondary rounded-xl p-6 shadow-xs dark:shadow-none;
-  @apply print:break-inside-avoid print:bg-transparent print:p-0 print:shadow-none;
+  --text-color-button-secondary: light-dark(
+    var(--color-zinc-950),
+    var(--color-white)
+  );
 }
 
 @utility button {
-  @apply bg-button text-button hover:bg-button-hover flex justify-center rounded-md px-4 py-2 text-center font-sans! font-medium tracking-wider text-balance no-underline transition-colors;
+  @apply bg-button text-button hover:bg-button-hover inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-center font-sans! font-medium text-balance no-underline transition-colors [&_svg]:size-4;
   @apply print:text-body print:bg-transparent print:p-0;
 }
 
-@utility button-secondary {
-  @apply bg-button-secondary text-button-secondary hover:bg-button-secondary-hover flex items-center justify-center gap-2 rounded-md px-4 py-2 text-center font-sans! font-medium tracking-wider text-balance no-underline transition-colors;
-  @apply print:text-body print:gap-1 print:bg-transparent print:p-0;
-}
-
 @utility prose-default {
-  @apply prose-neutral dark:prose-invert tracking-wide;
-  @apply prose-h4:font-bold prose-h4:tracking-wide;
-  @apply prose-p:font-serif prose-p:font-light prose-strong:font-bold;
-}
-
-@utility large-header {
-  @apply text-3xl font-extrabold tracking-wide text-balance sm:text-4xl;
-}
-
-@utility section-header {
-  @apply text-secondary text-lg font-semibold tracking-wide text-balance print:text-lg print:font-bold;
+  @apply prose-neutral dark:prose-invert;
+  @apply prose-h4:font-bold;
+  @apply prose-p:font-sans prose-p:font-light prose-strong:font-bold;
 }
 
 @utility py-page {
   @apply py-4 md:py-12;
+}
+
+@utility typography {
+  @apply max-w-2xl;
+
+  p {
+    @apply text-body my-4;
+  }
+
+  strong {
+    @apply text-emphasis font-bold;
+  }
 }
 
 @layer base {
@@ -101,4 +106,20 @@
   h6 {
     @apply text-balance;
   }
+
+  h1 {
+    @apply text-emphasis text-3xl leading-tight font-semibold;
+  }
+
+  h2 {
+    @apply text-emphasis text-xl leading-tight;
+  }
+
+  h3 {
+    @apply text-secondary print:text-emphasis text-base leading-tight;
+  }
+
+  /* h4 {
+    @apply text-3xl font-extrabold  text-balance sm:text-4xl;
+  } */
 }

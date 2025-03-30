@@ -3,7 +3,8 @@ import profilePic from "./../../public/profile.jpg"
 import {
   EmailIcon,
   ExperienceBox,
-  ExternalLinkButton,
+  ExperienceJobTitle,
+  ExperienceLink,
   FigmaIcon,
   FindMeLink,
   GitHubIcon,
@@ -23,25 +24,23 @@ import {
 
 export default function HomePage() {
   return (
-    <main className="py-page flex flex-col gap-6 sm:gap-10 print:gap-8 print:py-0">
+    <main className="py-page space-y-6 print:gap-8 print:py-0">
       <section>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-6">
           <Image
             src={profilePic}
             alt="Profile"
-            className="h-24 w-24 shrink-0 rounded-full border-2 border-white print:border-0"
+            className="hidden size-24 shrink-0 rounded-xl border-0 border-white"
             priority
           />
-          <div className="space-y-4">
-            <div>
-              <h1 className="large-header">Kris McGinnes</h1>
-              <h2 className="section-header">Engineer & Designer</h2>
-            </div>
+          <div>
+            <h1>Kris McGinnes</h1>
+            <h3>Engineer & Designer</h3>
           </div>
         </div>
       </section>
-      <section className="space-y-6 sm:space-y-10">
-        <div className="prose-default prose sm:prose-lg print:prose-sm">
+      <section className="space-y-6">
+        <div className="typography">
           <p>
             Since the start of my career in 2007, I have had the privilege to
             work with large and small companies all aiming to{" "}
@@ -60,7 +59,7 @@ export default function HomePage() {
           </p>
         </div>
         <div className="space-y-4">
-          <h2 className="section-header">Get in Touch</h2>
+          <h3>Get in Touch</h3>
           <ul className="text-muted flex flex-wrap gap-4 print:gap-2">
             <li>
               <FindMeLink
@@ -119,11 +118,11 @@ export default function HomePage() {
           </ul>
         </div>
       </section>
-      <section className="flex flex-col gap-6 sm:gap-10 print:gap-4">
-        <h1 className="large-header">Skills</h1>
+      <section className="space-y-6 print:space-y-4">
+        <h2>Skills</h2>
 
         <section className="space-y-4">
-          <h2 className="section-header">Tech & Frameworks</h2>
+          <h3>Tech & Frameworks</h3>
 
           <ul className="flex flex-row flex-wrap items-center gap-2 print:gap-3">
             <li>
@@ -155,14 +154,14 @@ export default function HomePage() {
               </SkillButton>
             </li>
             <li>
-              <div className="text-muted text-heading tracking-wider print:hidden">
+              <div className="text-muted text-heading print:hidden">
                 &amp; many more
               </div>
             </li>
           </ul>
         </section>
         <section className="space-y-4">
-          <h2 className="section-header">Applications & Tools</h2>
+          <h3>Applications & Tools</h3>
 
           <ul className="flex flex-row flex-wrap items-center gap-2 print:gap-3">
             <li>
@@ -192,7 +191,7 @@ export default function HomePage() {
               </SkillButton>
             </li>
             <li>
-              <div className="text-muted text-heading tracking-wider print:hidden">
+              <div className="text-muted text-heading print:hidden">
                 &amp; many more
               </div>
             </li>
@@ -200,31 +199,29 @@ export default function HomePage() {
         </section>
       </section>
 
-      <section className="flex flex-col gap-6 sm:gap-10 print:gap-4">
-        <h1 className="large-header">Experience</h1>
+      <section className="space-y-6 print:space-y-4">
+        <h2>Experience</h2>
 
         <section className="space-y-4">
-          <h2 className="section-header">
-            Principal Consultant with Improving
-          </h2>
+          <h3>Principal Consultant with Improving</h3>
 
           <ul className="grid gap-4 md:grid-cols-2 print:grid-cols-1">
             <li>
               <ExperienceBox company="Influxer" date="2023">
-                <h4>Technical Lead</h4>
+                <ExperienceJobTitle>Technical Lead</ExperienceJobTitle>
                 <p>
                   Led the team rewriting the existing Shopify website with an
                   emphasis on design and performance. The project was completed
                   with a minimal team ahead of schedule.
                 </p>
-                <ExternalLinkButton href="http://www.influxermerch.com">
+                <ExperienceLink href="http://www.influxermerch.com">
                   Visit Influxer Merch
-                </ExternalLinkButton>
+                </ExperienceLink>
               </ExperienceBox>
             </li>
             <li>
               <ExperienceBox company="Spend Life Wisely" date="2022 - 2023">
-                <h4>Lead Mobile Developer</h4>
+                <ExperienceJobTitle>Lead Mobile Developer</ExperienceJobTitle>
                 <p>
                   Developed the SwiftUI mobile app for the social networking app
                   Our Community. I moved the app to a simpler architecture and
@@ -232,29 +229,29 @@ export default function HomePage() {
                   also mentored juniors on the frontend team, and provided
                   technical and problem solving assistance for the entire team.
                 </p>
-                <ExternalLinkButton href="https://apps.apple.com/us/app/our-community-local-events/id1575928251">
+                <ExperienceLink href="https://apps.apple.com/us/app/our-community-local-events/id1575928251">
                   Our Community on the App Store
-                </ExternalLinkButton>
+                </ExperienceLink>
               </ExperienceBox>
             </li>
           </ul>
         </section>
 
         <section className="space-y-4">
-          <h2 className="section-header">Senior Consultant with Improving</h2>
+          <h3>Senior Consultant with Improving</h3>
 
           <ul className="grid gap-4 md:grid-cols-2 print:grid-cols-1">
             <li>
               <ExperienceBox company="OxeFit" date="2021 - 2022">
-                <h4>Mobile App Developer</h4>
+                <ExperienceJobTitle>Mobile App Developer</ExperienceJobTitle>
                 <p>
                   Implemented custom and complex UI animations and interactions
                   in a React Native video platform app. Unfortunately, it was
                   never released due to the complexities of licensing content.
                 </p>
-                <ExternalLinkButton href="https://www.oxefit.com/">
+                <ExperienceLink href="https://www.oxefit.com/">
                   Visit OxeFit
-                </ExternalLinkButton>
+                </ExperienceLink>
               </ExperienceBox>
             </li>
             <li>
@@ -262,15 +259,15 @@ export default function HomePage() {
                 company="Federation of State Medical Boards (FSMB)"
                 date="2020 - 2021"
               >
-                <h4>Front End Developer</h4>
+                <ExperienceJobTitle>Front End Developer</ExperienceJobTitle>
                 <p>
                   Implemented new features and polished existing UI in a .NET
                   web app designed to connect nurses and doctors to hospitals in
                   need.
                 </p>
-                <ExternalLinkButton href="https://www.providerbridge.org/">
+                <ExperienceLink href="https://www.providerbridge.org/">
                   Visit ProviderBridge
-                </ExternalLinkButton>
+                </ExperienceLink>
               </ExperienceBox>
             </li>
             <li>
@@ -278,26 +275,26 @@ export default function HomePage() {
                 company="Toyota of North America"
                 date="2019 - 2020"
               >
-                <h4>Developer & Designer</h4>
+                <ExperienceJobTitle>Developer & Designer</ExperienceJobTitle>
                 <p>
                   Worked with a large team of UX designers on high fidelity
                   prototypes using the iPad and SwiftUI.
                 </p>
-                <ExternalLinkButton href="https://pressroom.lexus.com/the-all-new-lexus-interface-multimedia-system-is-here-and-it-is-a-game-changer/">
+                <ExperienceLink href="https://pressroom.lexus.com/the-all-new-lexus-interface-multimedia-system-is-here-and-it-is-a-game-changer/">
                   Lexus Press Release
-                </ExternalLinkButton>
+                </ExperienceLink>
               </ExperienceBox>
             </li>
             <li>
               <ExperienceBox company="Eagle Metal" date="2018 - 2019">
-                <h4>Developer</h4>
+                <ExperienceJobTitle>Developer</ExperienceJobTitle>
                 <p>
                   Polished the UI and rewrote the data layer for their roof
                   truss planning & ordering app.
                 </p>
-                <ExternalLinkButton href="https://eaglemetal.com/">
+                <ExperienceLink href="https://eaglemetal.com/">
                   Visit Eagle Metal
-                </ExternalLinkButton>
+                </ExperienceLink>
               </ExperienceBox>
             </li>
             <li>
@@ -308,9 +305,9 @@ export default function HomePage() {
                   devices, manipulate video files, and reliably sync large files
                   across multiple physical boundaries.
                 </p>
-                <ExternalLinkButton href="https://www.motorolasolutions.com/en_us/video-security-access-control/videomanager-el.html">
+                <ExperienceLink href="https://www.motorolasolutions.com/en_us/video-security-access-control/videomanager-el.html">
                   Visit Evidence Library
-                </ExternalLinkButton>
+                </ExperienceLink>
               </ExperienceBox>
             </li>
             <li>
@@ -321,19 +318,19 @@ export default function HomePage() {
                   form management software dealing directly with PDF files
                   within the WPF app.
                 </p>
-                <ExternalLinkButton href="https://tax.thomsonreuters.com/en">
+                <ExperienceLink href="https://tax.thomsonreuters.com/en">
                   Visit Tax & Accounting Software
-                </ExternalLinkButton>
+                </ExperienceLink>
               </ExperienceBox>
             </li>
           </ul>
         </section>
 
         <section className="space-y-4">
-          <h2 className="section-header">Software Consultant with Excolo</h2>
+          <h3>Software Consultant with Excolo</h3>
 
           <ExperienceBox company="SpaceX" date="2013">
-            <h4>Developer</h4>
+            <ExperienceJobTitle>Developer</ExperienceJobTitle>
             <p>
               Hired and managed team that built out a data center product
               procurement website using ASP.net MVC.
@@ -342,14 +339,12 @@ export default function HomePage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="section-header">
-            Software Consultant with CH Reynolds
-          </h2>
+          <h3>Software Consultant with CH Reynolds</h3>
 
           <ul className="grid gap-4 md:grid-cols-2 print:grid-cols-1">
             <li>
               <ExperienceBox company="Cisco Systems" date="2012 - 2013">
-                <h4>Team Lead</h4>
+                <ExperienceJobTitle>Team Lead</ExperienceJobTitle>
                 <p>
                   Hired and managed team that built out a data center product
                   procurement website using ASP.net MVC.
@@ -358,7 +353,7 @@ export default function HomePage() {
             </li>
             <li>
               <ExperienceBox company="Cisco Systems" date="2010 - 2012">
-                <h4>Developer</h4>
+                <ExperienceJobTitle>Developer</ExperienceJobTitle>
                 <p>
                   Enhanced the existing Silverlight app that would visually
                   manage data center resources with a drag and drop UI.
@@ -369,12 +364,12 @@ export default function HomePage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="section-header">Fulltime</h2>
+          <h3>Fulltime</h3>
 
           <ul className="grid gap-4 md:grid-cols-2 print:grid-cols-1">
             <li>
               <ExperienceBox company="Allegro Development" date="2007 - 2010">
-                <h4>Software Developer</h4>
+                <ExperienceJobTitle>Software Developer</ExperienceJobTitle>
                 <p>
                   Rewrote and enhanced a complex forecasting module written in
                   C# which was part of a very large oil & gas management suite.
@@ -383,7 +378,7 @@ export default function HomePage() {
             </li>
             <li>
               <ExperienceBox company="FedEx Kinkos" date="2007">
-                <h4>Developer</h4>
+                <ExperienceJobTitle>Developer</ExperienceJobTitle>
                 <p>
                   Worked with a team to transform large data sets using visual
                   tools.
@@ -394,13 +389,13 @@ export default function HomePage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="section-header">Education</h2>
+          <h3>Education</h3>
 
           <ExperienceBox
             company="University of Texas at Dallas"
             date="2002 - 2007"
           >
-            <h4>B.S. Computer Science</h4>
+            <ExperienceJobTitle>B.S. Computer Science</ExperienceJobTitle>
             <p>
               <strong>Notable Classes:</strong> Object Oriented Analysis &
               Design, Computer Graphics, Data Structures
