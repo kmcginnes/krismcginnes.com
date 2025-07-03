@@ -1,21 +1,30 @@
-import { type ComponentPropsWithRef, type PropsWithChildren } from "react"
+import React, {
+  type ComponentPropsWithRef,
+  type PropsWithChildren,
+} from "react"
 import { cn } from "~/lib/utils"
 
 type ExperienceBoxProps = {
   company: string
   date: string
+  jobTitle: string
 }
 
 export function ExperienceBox({
   company,
   date,
+  jobTitle,
   children,
 }: PropsWithChildren<ExperienceBoxProps>) {
   return (
-    <article className="bg-secondary h-full space-y-4 rounded-xl p-6 shadow-xs dark:shadow-none print:break-inside-avoid print:gap-2 print:bg-transparent print:p-0 print:shadow-none">
+    <article className="h-full space-y-6 print:break-inside-avoid print:space-y-2">
       <ExperienceHeader>
+        <div className="text-muted block text-sm">
+          <ExperienceDate>{date}</ExperienceDate>
+          <span>&nbsp;&nbsp;&mdash;&nbsp;&nbsp;</span>
+          <ExperienceJobTitle>{jobTitle}</ExperienceJobTitle>
+        </div>
         <ExperienceTitle>{company}</ExperienceTitle>
-        <ExperienceDate>{date}</ExperienceDate>
       </ExperienceHeader>
       <ExperienceContent>{children}</ExperienceContent>
     </article>
@@ -23,27 +32,17 @@ export function ExperienceBox({
 }
 
 export function ExperienceHeader(props: PropsWithChildren) {
-  return (
-    <header className="flex items-end justify-between gap-2 border-b border-green-500 pb-2 print:border-none print:pb-0">
-      {props.children}
-    </header>
-  )
+  return <header className="space-y-3">{props.children}</header>
 }
 
 export function ExperienceTitle(props: PropsWithChildren) {
   return (
-    <h1 className="text-base font-semibold print:text-base">
-      {props.children}
-    </h1>
+    <h1 className="text-2xl leading-4 print:text-base">{props.children}</h1>
   )
 }
 
-export function ExperienceDate(props: PropsWithChildren) {
-  return (
-    <h2 className="text-secondary shrink-0 text-base font-normal text-balance print:text-lg print:font-bold print:text-black">
-      {props.children}
-    </h2>
-  )
+export function ExperienceDate(props: ComponentPropsWithRef<"span">) {
+  return <span {...props} />
 }
 
 export function ExperienceContent(props: PropsWithChildren) {
@@ -51,8 +50,7 @@ export function ExperienceContent(props: PropsWithChildren) {
 }
 
 export function ExperienceJobTitle({
-  className,
   ...props
-}: ComponentPropsWithRef<"h4">) {
-  return <div className={cn("text-body font-bold", className)} {...props}></div>
+}: ComponentPropsWithRef<"span">) {
+  return <span {...props} />
 }

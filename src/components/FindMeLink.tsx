@@ -14,10 +14,10 @@ export function FindMeLink({
     <a
       href="https://github.com/kmcginnes"
       target="_blank"
-      className="text-muted hover:text-body print:text-body flex items-center gap-1 transition-colors"
+      className="text-body hover:text-accent print:text-body flex items-center gap-1 transition-all hover:scale-120"
       {...props}
     >
-      <Icon className="h-5 w-5 print:h-4 print:w-4" />
+      <Icon className="size-6 print:size-4" />
       <span className="hidden print:block">{children}</span>
     </a>
   )

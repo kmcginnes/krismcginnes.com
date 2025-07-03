@@ -4,23 +4,33 @@ import { cn } from "~/lib/utils"
 
 type SkillButtonProps = {
   icon: React.ComponentType<IconProps>
-} & React.AnchorHTMLAttributes<HTMLAnchorElement>
+  href?: React.ComponentProps<"a">["href"]
+  label: string
+} & React.ComponentPropsWithRef<"div">
 
 export function SkillButton({
+  className,
   children,
+  href,
   icon: Icon,
+  label,
   ...props
 }: PropsWithChildren<SkillButtonProps>) {
   return (
-    <a
-      target="_blank"
-      className={cn(
-        "print:text-body group bg-button-secondary hover:bg-button-secondary-hover text-button-secondary relative flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-center font-sans! font-medium text-balance no-underline transition-colors print:gap-1 print:bg-transparent print:p-0",
-      )}
+    <div
+      className={cn("flex flex-row items-center gap-2", className)}
       {...props}
     >
-      <Icon className="text-secondary h-5 w-5 print:h-4 print:w-4" />
-      <span>{children}</span>
-    </a>
+      <div className="flex size-[2lh] shrink-0 items-center justify-center self-start p-2.5">
+        <Icon className="text-accent print:text-body size-full" />
+      </div>
+      <p className="print:text-body text-lg leading-6.5">
+        <a href={href} className="text-emphasis font-semibold">
+          {label}
+        </a>
+        <span> &mdash; </span>
+        <span className="text-body">{children}</span>
+      </p>
+    </div>
   )
 }

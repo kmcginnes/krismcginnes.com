@@ -1,4 +1,4 @@
-import { Link } from "lucide-react"
+import { ChevronsRightIcon } from "lucide-react"
 import { type ComponentPropsWithoutRef } from "react"
 
 export function ExperienceLink({
@@ -9,11 +9,11 @@ export function ExperienceLink({
     <footer className="flex grow items-end print:hidden">
       <a
         target="_blank"
-        className="decoration-accent hover:text-emphasis [&_svg]:text-secondary inline-flex items-center gap-2 underline underline-offset-6 [&_svg]:size-4"
+        className="text-emphasis decoration-accent [&_svg]:text-secondary inline-flex items-center gap-1 underline underline-offset-8 hover:no-underline [&_svg]:size-3"
         {...props}
       >
-        <Link />
         {children}
+        <ChevronsRightIcon />
       </a>
     </footer>
   )
