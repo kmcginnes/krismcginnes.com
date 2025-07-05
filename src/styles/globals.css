@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 
 @theme inline {
   --font-sans: var(--font-nunito);
@@ -27,7 +26,7 @@
   );
 
   /* Text Colors */
-  --text-color-body: light-dark(var(--color-gray-500), var(--color-gray-400));
+  --text-color-body: light-dark(var(--color-gray-600), var(--color-gray-400));
 
   --text-color-heading: light-dark(
     var(--color-blue-700),
@@ -73,16 +72,6 @@
   );
 }
 
-@utility typography {
-  p {
-    @apply my-4 text-lg leading-6.5;
-  }
-
-  strong {
-    @apply text-emphasis font-bold;
-  }
-}
-
 @layer base {
   :root {
     color-scheme: light dark;
@@ -95,6 +84,10 @@
     @apply subpixel-antialiased;
   }
 
+  html {
+    font-size: 18px;
+  }
+
   h1,
   h2,
   h3,
@@ -105,14 +98,26 @@
   }
 
   h1 {
-    @apply text-emphasis text-4xl leading-relaxed font-semibold;
+    @apply text-emphasis text-2xl leading-tight font-semibold md:text-3xl;
   }
 
   h2 {
-    @apply text-emphasis text-3xl leading-relaxed font-bold;
+    @apply text-emphasis text-xl leading-tight font-bold md:text-2xl;
   }
 
   h3 {
-    @apply text-emphasis print:text-emphasis text-base leading-tight;
+    @apply text-emphasis text-base leading-tight font-semibold;
+  }
+
+  a {
+    @apply text-emphasis decoration-accent inline-flex items-center gap-1 underline underline-offset-4 hover:decoration-amber-600;
+  }
+
+  p {
+    @apply leading-relaxed font-light text-pretty;
+  }
+
+  strong {
+    @apply text-emphasis font-semibold;
   }
 }

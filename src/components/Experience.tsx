@@ -17,28 +17,26 @@ export function ExperienceBox({
   children,
 }: PropsWithChildren<ExperienceBoxProps>) {
   return (
-    <article className="h-full space-y-4 print:break-inside-avoid print:space-y-2">
+    <article className="h-full space-y-3 print:break-inside-avoid print:space-y-2">
       <ExperienceHeader>
+        <ExperienceTitle>{company}</ExperienceTitle>
         <div className="text-muted block text-sm">
           <ExperienceDate>{date}</ExperienceDate>
           <span>&nbsp;&nbsp;&mdash;&nbsp;&nbsp;</span>
           <ExperienceJobTitle>{jobTitle}</ExperienceJobTitle>
         </div>
       </ExperienceHeader>
-      <ExperienceTitle>{company}</ExperienceTitle>
       <ExperienceContent>{children}</ExperienceContent>
     </article>
   )
 }
 
 export function ExperienceHeader(props: PropsWithChildren) {
-  return <header className="space-y-3">{props.children}</header>
+  return <header className="space-y-1">{props.children}</header>
 }
 
 export function ExperienceTitle(props: PropsWithChildren) {
-  return (
-    <h1 className="text-2xl leading-4 print:text-base">{props.children}</h1>
-  )
+  return <h3>{props.children}</h3>
 }
 
 export function ExperienceDate(props: ComponentPropsWithRef<"span">) {
@@ -46,7 +44,7 @@ export function ExperienceDate(props: ComponentPropsWithRef<"span">) {
 }
 
 export function ExperienceContent(props: PropsWithChildren) {
-  return <div className="typography">{props.children}</div>
+  return <div className="space-y-4">{props.children}</div>
 }
 
 export function ExperienceJobTitle({

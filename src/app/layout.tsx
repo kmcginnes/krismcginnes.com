@@ -1,11 +1,11 @@
 import "~/styles/globals.css"
-import { Inter } from "next/font/google"
+import { Inter, Archivo, Funnel_Sans } from "next/font/google"
 import Footer from "./footer"
 import { env } from "~/env"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
-const sans = Inter({
+const sans = Funnel_Sans({
   subsets: ["latin"],
   variable: "--font-nunito",
 })
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-default accent-accent selection:bg-selection text-body min-h-screen max-w-3xl px-4 font-sans antialiased selection:text-white sm:px-8 md:mx-auto md:px-12 print:bg-transparent ${sans.variable}`}
+        className={`bg-default accent-accent selection:bg-selection text-body min-h-screen max-w-[75ch] space-y-8 px-4 py-8 font-sans text-pretty antialiased selection:text-white sm:px-8 md:mx-auto md:px-12 md:py-12 print:bg-transparent print:py-0 ${sans.variable}`}
       >
         {children}
         <Footer />

@@ -9,18 +9,21 @@ import {
   InternetIcon,
   LinkedInIcon,
   MastodonIcon,
-  NextIcon,
   ReactIcon,
-  RemixIcon,
   SkillButton,
   SwiftIcon,
-  TailwindIcon,
 } from "~/components"
-import { CircleEllipsisIcon, MailIcon, UsersIcon } from "lucide-react"
+import {
+  CircleEllipsisIcon,
+  CloudyIcon,
+  MailIcon,
+  PaintbrushIcon,
+  UsersIcon,
+} from "lucide-react"
 
 export default function HomePage() {
   return (
-    <main className="space-y-12 py-4 md:py-12 print:gap-8 print:py-0">
+    <main className="space-y-8 print:gap-8">
       <section>
         <div className="items-center space-y-4">
           <Image
@@ -29,17 +32,15 @@ export default function HomePage() {
             className="size-24 shrink-0 rounded-full border-0 border-white"
             priority
           />
-          <div>
-            <h1 className="leading-tight">
-              Hi, my name is{" "}
-              <strong className="text-accent">Kris McGinnes</strong>. I am an
-              engineer and designer.
-            </h1>
-          </div>
+          <h1>
+            Hi, my name is{" "}
+            <strong className="text-accent">Kris McGinnes</strong>. I am an
+            engineer and designer.
+          </h1>
         </div>
       </section>
-      <section className="space-y-8">
-        <div className="typography">
+      <section className="space-y-6">
+        <div className="space-y-4">
           <p>
             Since the start of my career in 2007, I have had the privilege to
             work with large and small companies all aiming to{" "}
@@ -57,8 +58,7 @@ export default function HomePage() {
             city.
           </p>
         </div>
-        <div className="space-y-4">
-          <h3 className="hidden">Get in Touch</h3>
+        <div className="grid justify-center space-y-4 md:justify-start">
           <ul className="text-muted flex flex-wrap gap-5 print:gap-3">
             <li>
               <FindMeLink
@@ -121,7 +121,7 @@ export default function HomePage() {
         <h2>Skills</h2>
 
         <section className="space-y-4">
-          <ul className="space-y-8 print:gap-3">
+          <ul className="space-y-6">
             <li>
               <SkillButton icon={UsersIcon} label="Collaboration & mentoring">
                 A product is only as good as the people who build it. I&lsquo;ve
@@ -130,53 +130,30 @@ export default function HomePage() {
               </SkillButton>
             </li>
             <li>
-              <SkillButton
-                icon={ReactIcon}
-                href="https://react.dev/"
-                label="React"
-              >
+              <SkillButton icon={PaintbrushIcon} label="Design">
+                Most recently, I&lsquo;ve been working with Tailwind and raw CSS
+                with React. In former projects I&lsquo;ve created custom theme
+                providers for both React and SwiftUI, designed and collaborated
+                inside of Figma, used LESS and SASS, and more.
+              </SkillButton>
+            </li>
+            <li>
+              <SkillButton icon={CloudyIcon} label="Cloud Services">
+                Most recently, I&lsquo;ve been working with AWS, Docker, and
+                Vercel. In former projects I&lsquo;ve used Azure and local web
+                servers.
+              </SkillButton>
+            </li>
+            <li>
+              <SkillButton icon={ReactIcon} label="React">
                 I&lsquo;ve been using React & React Native since 2015 on both
                 marketing and web app projects. This very site is built using
-                React.
+                React using Next.js. On former projects I&lsquo;ve used Remix
+                (now React Router).
               </SkillButton>
             </li>
             <li>
-              <SkillButton
-                icon={NextIcon}
-                href="https://nextjs.org/"
-                label="Next.js"
-              >
-                I&lsquo;ve used Next.js on a variety of hobby projects and is
-                used for this site, which is likely overkill.
-              </SkillButton>
-            </li>
-            <li>
-              <SkillButton
-                icon={RemixIcon}
-                href="https://remix.run/"
-                label="Remix.js"
-              >
-                Now merged in to React Router as &ldquo;framework mode&rdquo;, I
-                used it for a marketing website integrated with Shopify and
-                enjoyed the speed and the adherence to web standards..
-              </SkillButton>
-            </li>
-            <li>
-              <SkillButton
-                icon={TailwindIcon}
-                href="https://tailwindcss.com/"
-                label="TailwindCSS"
-              >
-                While I&lsquo;m proficient in CSS, I prefer to use Tailwind for
-                the cohesion with component based web development.
-              </SkillButton>
-            </li>
-            <li>
-              <SkillButton
-                icon={SwiftIcon}
-                href="https://developer.apple.com/xcode/swiftui/"
-                label="SwiftUI"
-              >
+              <SkillButton icon={SwiftIcon} label="SwiftUI">
                 I&lsquo;ve worked with UIKit and ObjectiveC a bit as well, but
                 I&lsquo;ve been using SwiftUI since the day it came out at WWDC
                 2019.
@@ -198,7 +175,7 @@ export default function HomePage() {
         <h2>Experience</h2>
 
         <section className="space-y-8">
-          <ul className="space-y-12">
+          <ul className="space-y-8">
             <li>
               <ExperienceBox
                 company="Amazon Web Services"

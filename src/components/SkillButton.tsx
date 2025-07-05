@@ -4,30 +4,26 @@ import { cn } from "~/lib/utils"
 
 type SkillButtonProps = {
   icon: React.ComponentType<IconProps>
-  href?: React.ComponentProps<"a">["href"]
   label: string
 } & React.ComponentPropsWithRef<"div">
 
 export function SkillButton({
   className,
   children,
-  href,
   icon: Icon,
   label,
   ...props
 }: PropsWithChildren<SkillButtonProps>) {
   return (
     <div
-      className={cn("flex flex-row items-center gap-2", className)}
+      className={cn("flex flex-row items-center gap-4", className)}
       {...props}
     >
-      <div className="flex size-[2lh] shrink-0 items-center justify-center self-start p-2.5">
+      <div className="bg-accent/8 flex size-[2lh] shrink-0 items-center justify-center self-start rounded-2xl p-3">
         <Icon className="text-accent size-full" />
       </div>
-      <p className="text-lg leading-6.5">
-        <a href={href} className="text-emphasis font-semibold">
-          {label}
-        </a>
+      <p className="leading-6.5">
+        <strong>{label}</strong>
         <span> &mdash; </span>
         <span className="text-body">{children}</span>
       </p>
