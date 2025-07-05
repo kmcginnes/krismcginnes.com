@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-default accent-accent selection:bg-selection text-body min-h-screen max-w-[75ch] space-y-8 px-4 py-8 font-sans text-pretty antialiased selection:text-white sm:px-8 md:mx-auto md:px-12 md:py-12 print:bg-transparent print:py-0 ${sans.variable}`}
+        className={`bg-default accent-accent selection:bg-selection text-body content-grid min-h-screen font-sans text-pretty antialiased selection:text-white print:bg-transparent ${sans.variable}`}
       >
         {children}
         <Footer />

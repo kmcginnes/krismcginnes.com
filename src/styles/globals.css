@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "tailwind-heropatterns";
 
 @theme inline {
   --font-sans: var(--font-nunito);
@@ -6,6 +7,9 @@
 
   --color-accent: light-dark(var(--color-blue-600), var(--color-blue-500));
   --color-accent-hover: var(--color-blue-500);
+
+  --color-highlight: light-dark(var(--color-amber-600), var(--color-amber-500));
+  --color-highlight-hover: var(--color-amber-500);
 
   /* Background Colors */
   --background-color-default: light-dark(
@@ -110,7 +114,7 @@
   }
 
   a {
-    @apply text-emphasis decoration-accent inline-flex items-center gap-1 underline underline-offset-4 hover:decoration-amber-600;
+    @apply text-emphasis decoration-accent hover:decoration-highlight-hover inline-flex items-center gap-1 underline underline-offset-4 transition-all duration-150;
   }
 
   p {
@@ -119,5 +123,37 @@
 
   strong {
     @apply text-emphasis font-semibold;
+  }
+
+  section {
+    @apply py-4;
+  }
+}
+
+@layer utilities {
+  .content-grid,
+  .content-full-width {
+    display: grid;
+    grid-template-columns:
+      [full-width-start] minmax(1rem, 1fr) [content-start] minmax(
+        min-content,
+        75ch
+      )
+      [content-end] minmax(1rem, 1fr) [full-width-end];
+
+    & > :not(.content-full-width, .absolute),
+    .content-full-width > :not(.content-full-width, .absolute) {
+      grid-column: content;
+    }
+
+    & > .content-full-width {
+      grid-column: full-width;
+      display: grid;
+      grid-template-columns: inherit;
+    }
+
+    & > .content-inline-svg-background {
+      grid-column: full-width;
+    }
   }
 }

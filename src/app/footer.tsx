@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="text-muted space-y-2 text-sm print:hidden">
+    <footer className="text-muted space-y-2 py-8 text-sm md:py-12 print:hidden print:py-0 print:pt-8">
       <p>&copy; {new Date().getFullYear()} Kris McGinnes</p>
       <p>
         Built using <a href="https://nextjs.org/">Next.js</a> and deployed on{" "}
