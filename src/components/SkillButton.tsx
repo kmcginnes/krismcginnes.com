@@ -19,7 +19,7 @@ export function SkillButton({
       className={cn("flex flex-row items-center gap-4", className)}
       {...props}
     >
-      <div className="bg-accent/8 flex size-[2lh] shrink-0 items-center justify-center self-start rounded-2xl p-3">
+      <div className="bg-accent-muted/25 dark:bg-accent/25 flex size-[2lh] shrink-0 items-center justify-center self-start rounded-2xl p-3 print:hidden">
         <Icon className="text-accent size-full" />
       </div>
       <p className="leading-6.5">

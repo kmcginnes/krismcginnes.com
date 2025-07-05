@@ -26,7 +26,7 @@ export default function HomePage() {
   return (
     <>
       <section className="content-full-width relative">
-        <HeroPattern className="absolute inset-0 -z-10 bg-amber-300 mask-b-from-20% mask-b-to-85% text-amber-700 opacity-20" />
+        <HeroPattern className="text-highlight bg-highlight-muted absolute inset-0 -z-10 mask-b-from-20% mask-b-to-85% opacity-20 dark:block dark:bg-transparent print:hidden" />
         <div className="space-y-4 pt-8 md:pt-12 print:pt-0">
           <Image
             src={profilePic}
@@ -36,8 +36,10 @@ export default function HomePage() {
           />
           <h1>
             Hi, my name is{" "}
-            <strong className="text-accent">Kris McGinnes</strong>. I am an
-            engineer and designer.
+            <strong className="text-accent print:text-emphasis print:font-black">
+              Kris McGinnes
+            </strong>
+            . I am an engineer and designer.
           </h1>
         </div>
       </section>
