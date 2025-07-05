@@ -12,7 +12,7 @@
     "typecheck": "tsc --noEmit"
   },
   "engines": {
-    "node": "24.x"
+    "node": "18.x"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.7.3",
