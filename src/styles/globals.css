@@ -30,7 +30,7 @@
   --text-color-body: light-dark(var(--color-gray-500), var(--color-gray-400));
 
   --text-color-heading: light-dark(
-    var(--color-blue-800),
+    var(--color-blue-700),
     var(--color-blue-300)
   );
 
@@ -73,21 +73,6 @@
   );
 }
 
-@utility button {
-  @apply bg-button text-button hover:bg-button-hover inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-center font-sans! font-medium text-balance no-underline transition-colors [&_svg]:size-4;
-  @apply print:text-body print:bg-transparent print:p-0;
-}
-
-@utility prose-default {
-  @apply prose-neutral dark:prose-invert;
-  @apply prose-h4:font-bold;
-  @apply prose-p:font-sans prose-p:font-light prose-strong:font-bold;
-}
-
-@utility py-page {
-  @apply py-4 md:py-12;
-}
-
 @utility typography {
   p {
     @apply my-4 text-lg leading-6.5;
@@ -124,14 +109,10 @@
   }
 
   h2 {
-    @apply text-heading text-3xl leading-relaxed font-black;
+    @apply text-emphasis text-3xl leading-relaxed font-bold;
   }
 
   h3 {
     @apply text-emphasis print:text-emphasis text-base leading-tight;
   }
-
-  /* h4 {
-    @apply text-3xl font-extrabold  text-balance sm:text-4xl;
-  } */
 }

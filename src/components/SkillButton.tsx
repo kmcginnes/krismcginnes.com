@@ -22,9 +22,9 @@ export function SkillButton({
       {...props}
     >
       <div className="flex size-[2lh] shrink-0 items-center justify-center self-start p-2.5">
-        <Icon className="text-accent print:text-body size-full" />
+        <Icon className="text-accent size-full" />
       </div>
-      <p className="print:text-body text-lg leading-6.5">
+      <p className="text-lg leading-6.5">
         <a href={href} className="text-emphasis font-semibold">
           {label}
         </a>

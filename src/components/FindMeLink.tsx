@@ -12,13 +12,12 @@ export function FindMeLink({
 }: PropsWithChildren<FindMeLinkProps>) {
   return (
     <a
-      href="https://github.com/kmcginnes"
       target="_blank"
-      className="text-body hover:text-accent print:text-body flex items-center gap-1 transition-all hover:scale-120"
+      className="text-body hover:text-accent flex items-center gap-1 transition-all hover:scale-120"
       {...props}
     >
       <Icon className="size-6 print:size-4" />
-      <span className="hidden print:block">{children}</span>
+      <div className="hidden print:!block">{children}</div>
     </a>
   )
 }

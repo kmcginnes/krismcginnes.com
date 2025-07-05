@@ -17,15 +17,15 @@ export function ExperienceBox({
   children,
 }: PropsWithChildren<ExperienceBoxProps>) {
   return (
-    <article className="h-full space-y-6 print:break-inside-avoid print:space-y-2">
+    <article className="h-full space-y-4 print:break-inside-avoid print:space-y-2">
       <ExperienceHeader>
         <div className="text-muted block text-sm">
           <ExperienceDate>{date}</ExperienceDate>
           <span>&nbsp;&nbsp;&mdash;&nbsp;&nbsp;</span>
           <ExperienceJobTitle>{jobTitle}</ExperienceJobTitle>
         </div>
-        <ExperienceTitle>{company}</ExperienceTitle>
       </ExperienceHeader>
+      <ExperienceTitle>{company}</ExperienceTitle>
       <ExperienceContent>{children}</ExperienceContent>
     </article>
   )

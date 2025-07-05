@@ -20,7 +20,7 @@ import { CircleEllipsisIcon, MailIcon, UsersIcon } from "lucide-react"
 
 export default function HomePage() {
   return (
-    <main className="py-page space-y-12 print:gap-8 print:py-0">
+    <main className="space-y-12 py-4 md:py-12 print:gap-8 print:py-0">
       <section>
         <div className="items-center space-y-4">
           <Image
@@ -29,8 +29,7 @@ export default function HomePage() {
             className="size-24 shrink-0 rounded-full border-0 border-white"
             priority
           />
-          <div className="">
-            {/* <h3 className="text-accent">Engineer & Designer</h3> */}
+          <div>
             <h1 className="leading-tight">
               Hi, my name is{" "}
               <strong className="text-accent">Kris McGinnes</strong>. I am an
@@ -60,7 +59,7 @@ export default function HomePage() {
         </div>
         <div className="space-y-4">
           <h3 className="hidden">Get in Touch</h3>
-          <ul className="text-muted flex flex-wrap gap-5 print:gap-2">
+          <ul className="text-muted flex flex-wrap gap-5 print:gap-3">
             <li>
               <FindMeLink
                 icon={MailIcon}
