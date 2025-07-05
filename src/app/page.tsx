@@ -26,7 +26,6 @@ export default function HomePage() {
   return (
     <>
       <section className="content-full-width relative">
-        <HeroPattern className="text-highlight bg-highlight-muted absolute inset-0 -z-10 mask-b-from-20% mask-b-to-85% opacity-20 dark:block dark:bg-transparent print:hidden" />
         <div className="space-y-4 pt-8 md:pt-12 print:pt-0">
           <Image
             src={profilePic}
@@ -383,8 +382,10 @@ export default function HomePage() {
           jobTitle="B.S. Computer Science"
         >
           <p>
-            <strong>Notable Classes:</strong> Object Oriented Analysis & Design,
-            Computer Graphics, Data Structures
+            <strong>Notable Classes</strong>
+            <span>&nbsp;&nbsp;&mdash;&nbsp;&nbsp;</span>
+            Object Oriented Analysis & Design, Computer Graphics, Data
+            Structures
           </p>
         </ExperienceBox>
       </section>

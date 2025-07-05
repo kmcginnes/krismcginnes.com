@@ -17,7 +17,7 @@ export function ExperienceLink({
         {...props}
       >
         {children}
-        <ExternalLinkIcon className="text-highlight size-4 opacity-0 transition-opacity duration-150 group-hover:opacity-100" />
+        <ExternalLinkIcon className="text-accent size-4 opacity-0 transition-opacity duration-150 group-hover:opacity-100" />
       </a>
     </footer>
   )

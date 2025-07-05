@@ -5,28 +5,9 @@ import { env } from "~/env"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import React from "react"
-
-const rubik = Rubik({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
-
-const raleway = Raleway({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
+import { HeroPattern } from "~/components"
 
 const openSans = Open_Sans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
-
-const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
 })
@@ -46,8 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-default accent-accent selection:bg-selection text-body content-grid min-h-screen font-sans text-pretty antialiased selection:text-white print:bg-transparent ${openSans.variable}`}
+        className={`bg-default accent-accent selection:bg-selection text-body content-grid relative min-h-screen font-sans text-pretty antialiased selection:text-white print:bg-transparent ${openSans.variable}`}
       >
+        <HeroPattern className="text-accent bg-accent-muted absolute inset-x-0 top-0 -z-10 h-96 mask-b-from-20% mask-b-to-85% opacity-20 dark:block dark:bg-transparent print:hidden" />
         {children}
         <Footer />
         <Analytics />
