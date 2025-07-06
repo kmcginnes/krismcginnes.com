@@ -4,6 +4,12 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
   "cSpell.words": [
     "fontawesome",
     "Fonticons",
@@ -15,6 +21,7 @@
     "McGinnes",
     "Merch",
     "nextjs",
+    "nunito",
     "Silverlight",
     "tailwindcss",
     "typecheck"

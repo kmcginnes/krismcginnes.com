@@ -1,11 +1,95 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "tailwind-heropatterns";
+
+@theme inline {
+  --font-sans: var(--font-sans);
+
+  --color-accent: light-dark(
+    var(--color-emerald-700),
+    var(--color-emerald-400)
+  );
+  --color-accent-hover: var(--color-emerald-500);
+  --color-accent-muted: light-dark(
+    var(--color-emerald-200),
+    var(--color-emerald-600)
+  );
+
+  /* Background Colors */
+  --background-color-default: light-dark(
+    var(--color-white),
+    var(--color-zinc-900)
+  );
+  --background-color-secondary: light-dark(
+    var(--color-white),
+    var(--color-zinc-800)
+  );
+  --background-color-selection: light-dark(
+    var(--color-emerald-600),
+    var(--color-emerald-700)
+  );
+  --background-color-subtle: light-dark(
+    var(--color-zinc-100),
+    var(--color-zinc-800)
+  );
+
+  /* Text Colors */
+  --text-color-body: light-dark(var(--color-zinc-600), var(--color-zinc-200));
+
+  --text-color-heading: light-dark(
+    var(--color-emerald-700),
+    var(--color-emerald-300)
+  );
+
+  --text-color-secondary: light-dark(
+    var(--color-emerald-600),
+    var(--color-emerald-300)
+  );
+
+  --text-color-tertiary: light-dark(
+    var(--color-emerald-500),
+    var(--color-emerald-500)
+  );
+
+  --text-color-muted: light-dark(var(--color-zinc-500), var(--color-zinc-400));
+
+  --text-color-emphasis: light-dark(var(--color-zinc-950), var(--color-white));
+
+  /* Button Colors */
+
+  --background-color-button: var(--color-emerald-700);
+  --background-color-button-hover: var(--color-emerald-600);
+  --text-color-button: var(--color-white);
+
+  --background-color-button-secondary: light-dark(
+    var(--color-zinc-200),
+    var(--color-zinc-800)
+  );
+
+  --background-color-button-secondary-hover: light-dark(
+    var(--color-zinc-300),
+    var(--color-zinc-700)
+  );
+
+  --text-color-button-secondary: light-dark(
+    var(--color-zinc-950),
+    var(--color-white)
+  );
+}
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+}
 
 @layer base {
   * {
     min-width: 0;
     @apply subpixel-antialiased;
+  }
+
+  html {
+    font-size: 18px;
   }
 
   h1,
@@ -17,65 +101,59 @@
     @apply text-balance;
   }
 
-  body {
-    @apply bg-gray-50 antialiased accent-green-500 selection:bg-green-600;
-    @apply selection:text-white dark:bg-gray-900 selection:dark:bg-green-700;
-    @apply print:bg-transparent;
-  }
-}
-
-@layer components {
-  .card {
-    @apply bg-secondary rounded-xl p-6 shadow-sm dark:shadow-none;
-    @apply print:break-inside-avoid print:bg-transparent print:p-0 print:shadow-none;
+  h1 {
+    @apply text-emphasis text-2xl leading-tight font-semibold md:text-3xl;
   }
 
-  .button {
-    @apply flex justify-center text-balance rounded-md bg-green-700 px-4 py-2 text-center !font-sans font-medium tracking-wider text-white no-underline transition-colors hover:bg-green-600 dark:bg-green-700;
-    @apply print:text-body print:bg-transparent print:p-0;
+  h2 {
+    @apply text-emphasis text-xl leading-tight font-bold md:text-2xl;
   }
 
-  .button-secondary {
-    @apply flex items-center justify-center gap-2 text-balance rounded-md bg-gray-200 px-4 py-2 text-center !font-sans font-medium tracking-wider text-gray-950 no-underline transition-colors hover:bg-gray-300;
-    @apply dark:bg-gray-800 dark:text-white hover:dark:bg-gray-700;
-    @apply print:text-body print:gap-1 print:bg-transparent print:p-0;
+  h3 {
+    @apply text-emphasis text-base leading-tight font-semibold;
   }
 
-  .prose-default {
-    @apply prose-neutral tracking-wide dark:prose-invert;
-    @apply prose-h4:font-bold prose-h4:tracking-wide;
-    @apply prose-p:font-serif prose-p:font-light prose-strong:font-bold;
+  a {
+    @apply text-emphasis decoration-accent hover:decoration-accent-hover inline-flex items-center gap-1 underline underline-offset-4 transition-all duration-150 print:no-underline;
   }
 
-  .large-header {
-    @apply text-balance text-3xl font-extrabold tracking-wide sm:text-4xl;
+  p {
+    @apply leading-relaxed font-normal text-pretty print:font-normal;
   }
 
-  .section-header {
-    @apply text-secondary text-balance text-lg font-semibold tracking-wide print:text-lg print:font-bold;
+  strong {
+    @apply text-emphasis font-bold;
+  }
+
+  section {
+    @apply py-4;
   }
 }
 
 @layer utilities {
-  .py-page {
-    @apply py-4 md:py-12;
-  }
+  .content-grid,
+  .content-full-width {
+    display: grid;
+    grid-template-columns:
+      [full-width-start] minmax(1rem, 1fr) [content-start] minmax(
+        min-content,
+        75ch
+      )
+      [content-end] minmax(1rem, 1fr) [full-width-end];
 
-  .bg-secondary {
-    @apply bg-white dark:bg-gray-800;
-  }
+    & > :not(.content-full-width, .absolute),
+    .content-full-width > :not(.content-full-width, .absolute) {
+      grid-column: content;
+    }
 
-  .text-body {
-    @apply text-gray-950 dark:text-gray-50;
-  }
+    & > .content-full-width {
+      grid-column: full-width;
+      display: grid;
+      grid-template-columns: inherit;
+    }
 
-  .text-secondary {
-    @apply text-green-600 dark:text-green-200 print:text-gray-900;
-  }
-  .text-tertiary {
-    @apply text-green-500 dark:text-green-500 print:text-gray-800;
-  }
-  .text-muted {
-    @apply text-gray-500 dark:text-gray-400;
+    & > .content-inline-svg-background {
+      grid-column: full-width;
+    }
   }
 }

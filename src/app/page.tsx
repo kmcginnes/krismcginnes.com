@@ -1,45 +1,47 @@
 import Image from "next/image"
-import { type PropsWithChildren } from "react"
+import profilePic from "./../../public/profile.jpg"
 import {
-  EmailIcon,
-  FigmaIcon,
+  ExperienceBox,
+  ExperienceLink,
+  FindMeLink,
   GitHubIcon,
-  type IconProps,
   InstagramIcon,
   InternetIcon,
   LinkedInIcon,
   MastodonIcon,
-  NextIcon,
   ReactIcon,
-  RemixIcon,
+  SkillButton,
   SwiftIcon,
-  TailwindIcon,
-  VSCodeIcon,
-  XcodeIcon,
-} from "./icons"
-import profilePic from "./../../public/profile.jpg"
+} from "~/components"
+import {
+  CircleEllipsisIcon,
+  CloudyIcon,
+  MailIcon,
+  PaintbrushIcon,
+  UsersIcon,
+} from "lucide-react"
 
 export default function HomePage() {
   return (
-    <main className="py-page flex flex-col gap-6 sm:gap-10 print:gap-8 print:py-0">
-      <section>
-        <div className="flex items-center gap-4">
-          <Image
-            src={profilePic}
-            alt="Profile"
-            className="h-24 w-24 flex-shrink-0 rounded-full border-2 border-white print:border-0"
-            priority
-          />
-          <div className="space-y-4">
-            <div>
-              <h1 className="large-header">Kris McGinnes</h1>
-              <h2 className="section-header">Engineer & Designer</h2>
-            </div>
-          </div>
-        </div>
+    <>
+      <section className="space-y-4 pt-8 md:pt-12 print:pt-0">
+        <Image
+          src={profilePic}
+          alt="Profile"
+          className="size-24 shrink-0 rounded-full border-0 border-white opacity-100"
+          priority
+        />
+        <h1>
+          Hi, my name is{" "}
+          <strong className="text-accent print:text-emphasis print:font-black">
+            Kris McGinnes
+          </strong>
+          . I am an engineer and designer.
+        </h1>
       </section>
-      <section className="space-y-6 sm:space-y-10">
-        <div className="prose-default prose sm:prose-lg print:prose-sm">
+
+      <section className="space-y-6">
+        <div className="space-y-4">
           <p>
             Since the start of my career in 2007, I have had the privilege to
             work with large and small companies all aiming to{" "}
@@ -57,437 +59,333 @@ export default function HomePage() {
             city.
           </p>
         </div>
-        <div className="space-y-4">
-          <h2 className="section-header">Get in Touch</h2>
-          <ul className="text-muted text-body flex flex-wrap gap-4 print:gap-2">
-            <li>
-              <FindMeLink
-                icon={EmailIcon}
-                href="mailto:kris@mcginnes.io"
-                aria-label="Email"
-              >
-                kris@mcginnes.io
-              </FindMeLink>
-            </li>
-            <li>
-              <FindMeLink
-                icon={LinkedInIcon}
-                href="https://www.linkedin.com/in/krismcginnes/"
-                aria-label="LinkedIn"
-              >
-                linkedin.com/in/krismcginnes
-              </FindMeLink>
-            </li>
-            <li>
-              <FindMeLink
-                icon={GitHubIcon}
-                href="https://github.com/kmcginnes"
-                aria-label="GitHub"
-              >
-                github.com/kmcginnes
-              </FindMeLink>
-            </li>
-            <li>
-              <FindMeLink
-                icon={MastodonIcon}
-                href="https://mastodon.social/@kmcginnes"
-                aria-label="Mastodon"
-              >
-                mastodon.social/@kmcginnes
-              </FindMeLink>
-            </li>
-            <li>
-              <FindMeLink
-                icon={InstagramIcon}
-                href="https://www.instagram.com/kmcginnes"
-                aria-label="Instagram"
-              >
-                instagram.com/kmcginnes
-              </FindMeLink>
-            </li>
-            <li className="hidden print:inline">
-              <FindMeLink
-                icon={InternetIcon}
-                href="http://krismcginnes.com"
-                aria-label="Website"
-              >
-                krismcginnes.com
-              </FindMeLink>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section className="flex flex-col gap-6 sm:gap-10 print:gap-4">
-        <h1 className="large-header">Skills</h1>
 
-        <section className="space-y-4">
-          <h2 className="section-header">Tech & Frameworks</h2>
-
-          <ul className="flex flex-row flex-wrap items-center gap-2 print:gap-3">
-            <li>
-              <SkillButton icon={ReactIcon} href="https://react.dev/">
-                React
-              </SkillButton>
-            </li>
-            <li>
-              <SkillButton icon={NextIcon} href="https://nextjs.org/">
-                Next.js
-              </SkillButton>
-            </li>
-            <li>
-              <SkillButton icon={RemixIcon} href="https://remix.run/">
-                Remix.js
-              </SkillButton>
-            </li>
-            <li>
-              <SkillButton icon={TailwindIcon} href="https://tailwindcss.com/">
-                TailwindCSS
-              </SkillButton>
-            </li>
-            <li>
-              <SkillButton
-                icon={SwiftIcon}
-                href="https://developer.apple.com/xcode/swiftui/"
-              >
-                SwiftUI
-              </SkillButton>
-            </li>
-            <li>
-              <div className="text-muted text-heading tracking-wider print:hidden">
-                &amp; many more
-              </div>
-            </li>
-          </ul>
-        </section>
-        <section className="space-y-4">
-          <h2 className="section-header">Applications & Tools</h2>
-
-          <ul className="flex flex-row flex-wrap items-center gap-2 print:gap-3">
-            <li>
-              <SkillButton
-                icon={VSCodeIcon}
-                href="https://code.visualstudio.com/"
-              >
-                VS Code
-              </SkillButton>
-            </li>
-            <li>
-              <SkillButton icon={FigmaIcon} href="https://www.figma.com/">
-                Figma
-              </SkillButton>
-            </li>
-            <li>
-              <SkillButton
-                icon={XcodeIcon}
-                href="https://developer.apple.com/xcode/"
-              >
-                XCode
-              </SkillButton>
-            </li>
-            <li>
-              <SkillButton icon={GitHubIcon} href="https://github.com/">
-                GitHub
-              </SkillButton>
-            </li>
-            <li>
-              <div className="text-muted text-heading tracking-wider print:hidden">
-                &amp; many more
-              </div>
-            </li>
-          </ul>
-        </section>
+        <ul className="text-muted flex flex-wrap gap-5 print:gap-3">
+          <li>
+            <FindMeLink
+              icon={MailIcon}
+              href="mailto:kris@mcginnes.io"
+              aria-label="Email"
+            >
+              kris@mcginnes.io
+            </FindMeLink>
+          </li>
+          <li>
+            <FindMeLink
+              icon={LinkedInIcon}
+              href="https://www.linkedin.com/in/krismcginnes/"
+              aria-label="LinkedIn"
+            >
+              linkedin.com/in/krismcginnes
+            </FindMeLink>
+          </li>
+          <li>
+            <FindMeLink
+              icon={GitHubIcon}
+              href="https://github.com/kmcginnes"
+              aria-label="GitHub"
+            >
+              github.com/kmcginnes
+            </FindMeLink>
+          </li>
+          <li>
+            <FindMeLink
+              icon={MastodonIcon}
+              href="https://mastodon.social/@kmcginnes"
+              aria-label="Mastodon"
+            >
+              mastodon.social/@kmcginnes
+            </FindMeLink>
+          </li>
+          <li>
+            <FindMeLink
+              icon={InstagramIcon}
+              href="https://www.instagram.com/kmcginnes"
+              aria-label="Instagram"
+            >
+              instagram.com/kmcginnes
+            </FindMeLink>
+          </li>
+          <li className="hidden print:inline">
+            <FindMeLink
+              icon={InternetIcon}
+              href="http://krismcginnes.com"
+              aria-label="Website"
+            >
+              krismcginnes.com
+            </FindMeLink>
+          </li>
+        </ul>
       </section>
 
-      <section className="flex flex-col gap-6 sm:gap-10 print:gap-4">
-        <h1 className="large-header">Experience</h1>
+      <section className="space-y-6 print:space-y-4">
+        <h2>Skills</h2>
 
-        <section className="space-y-4">
-          <h2 className="section-header">
-            Principal Consultant with Improving
-          </h2>
-
-          <ul className="grid gap-4 md:grid-cols-2 print:grid-cols-1">
-            <li>
-              <ExperienceBox company="Influxer" date="2023">
-                <h4>Technical Lead</h4>
-                <p>
-                  Led the team rewriting the existing Shopify website with an
-                  emphasis on design and performance. The project was completed
-                  with a minimal team ahead of schedule.
-                </p>
-                <ExternalLinkButton href="http://www.influxermerch.com">
-                  Visit Influxer Merch
-                </ExternalLinkButton>
-              </ExperienceBox>
-            </li>
-            <li>
-              <ExperienceBox company="Spend Life Wisely" date="2022 - 2023">
-                <h4>Lead Mobile Developer</h4>
-                <p>
-                  Developed the SwiftUI mobile app for the social networking app
-                  Our Community. I moved the app to a simpler architecture and
-                  rebuilt the components to be more flexible and consistent. I
-                  also mentored juniors on the frontend team, and provided
-                  technical and problem solving assistance for the entire team.
-                </p>
-                <ExternalLinkButton href="https://apps.apple.com/us/app/our-community-local-events/id1575928251">
-                  Our Community on the App Store
-                </ExternalLinkButton>
-              </ExperienceBox>
-            </li>
-          </ul>
-        </section>
-
-        <section className="space-y-4">
-          <h2 className="section-header">Senior Consultant with Improving</h2>
-
-          <ul className="grid gap-4 md:grid-cols-2 print:grid-cols-1">
-            <li>
-              <ExperienceBox company="OxeFit" date="2021 - 2022">
-                <h4>Mobile App Developer</h4>
-                <p>
-                  Implemented custom and complex UI animations and interactions
-                  in a React Native video platform app. Unfortunately, it was
-                  never released due to the complexities of licensing content.
-                </p>
-                <ExternalLinkButton href="https://www.oxefit.com/">
-                  Visit OxeFit
-                </ExternalLinkButton>
-              </ExperienceBox>
-            </li>
-            <li>
-              <ExperienceBox
-                company="Federation of State Medical Boards (FSMB)"
-                date="2020 - 2021"
-              >
-                <h4>Front End Developer</h4>
-                <p>
-                  Implemented new features and polished existing UI in a .NET
-                  web app designed to connect nurses and doctors to hospitals in
-                  need.
-                </p>
-                <ExternalLinkButton href="https://www.providerbridge.org/">
-                  Visit ProviderBridge
-                </ExternalLinkButton>
-              </ExperienceBox>
-            </li>
-            <li>
-              <ExperienceBox
-                company="Toyota of North America"
-                date="2019 - 2020"
-              >
-                <h4>Developer & Designer</h4>
-                <p>
-                  Worked with a large team of UX designers on high fidelity
-                  prototypes using the iPad and SwiftUI.
-                </p>
-                <ExternalLinkButton href="https://pressroom.lexus.com/the-all-new-lexus-interface-multimedia-system-is-here-and-it-is-a-game-changer/">
-                  Lexus Press Release
-                </ExternalLinkButton>
-              </ExperienceBox>
-            </li>
-            <li>
-              <ExperienceBox company="Eagle Metal" date="2018 - 2019">
-                <h4>Developer</h4>
-                <p>
-                  Polished the UI and rewrote the data layer for their roof
-                  truss planning & ordering app.
-                </p>
-                <ExternalLinkButton href="https://eaglemetal.com/">
-                  Visit Eagle Metal
-                </ExternalLinkButton>
-              </ExperienceBox>
-            </li>
-            <li>
-              <ExperienceBox company="WatchGuard Video" date="2014 - 2018">
-                <h4>Developer</h4>
-                <p>
-                  Worked on various projects that interact directly with USB
-                  devices, manipulate video files, and reliably sync large files
-                  across multiple physical boundaries.
-                </p>
-                <ExternalLinkButton href="https://www.motorolasolutions.com/en_us/video-security-access-control/videomanager-el.html">
-                  Visit Evidence Library
-                </ExternalLinkButton>
-              </ExperienceBox>
-            </li>
-            <li>
-              <ExperienceBox company="Thompson Reuters" date="2013 - 2014">
-                <h4>Developer</h4>
-                <p>
-                  Audited security practices across organization, enhanced tax
-                  form management software dealing directly with PDF files
-                  within the WPF app.
-                </p>
-                <ExternalLinkButton href="https://tax.thomsonreuters.com/en">
-                  Visit Tax & Accounting Software
-                </ExternalLinkButton>
-              </ExperienceBox>
-            </li>
-          </ul>
-        </section>
-
-        <section className="space-y-4">
-          <h2 className="section-header">Software Consultant with Excolo</h2>
-
-          <ExperienceBox company="SpaceX" date="2013">
-            <h4>Developer</h4>
-            <p>
-              Hired and managed team that built out a data center product
-              procurement website using ASP.net MVC.
-            </p>
-          </ExperienceBox>
-        </section>
-
-        <section className="space-y-4">
-          <h2 className="section-header">
-            Software Consultant with CH Reynolds
-          </h2>
-
-          <ul className="grid gap-4 md:grid-cols-2 print:grid-cols-1">
-            <li>
-              <ExperienceBox company="Cisco Systems" date="2012 - 2013">
-                <h4>Team Lead</h4>
-                <p>
-                  Hired and managed team that built out a data center product
-                  procurement website using ASP.net MVC.
-                </p>
-              </ExperienceBox>
-            </li>
-            <li>
-              <ExperienceBox company="Cisco Systems" date="2010 - 2012">
-                <h4>Developer</h4>
-                <p>
-                  Enhanced the existing Silverlight app that would visually
-                  manage data center resources with a drag and drop UI.
-                </p>
-              </ExperienceBox>
-            </li>
-          </ul>
-        </section>
-
-        <section className="space-y-4">
-          <h2 className="section-header">Fulltime</h2>
-
-          <ul className="grid gap-4 md:grid-cols-2 print:grid-cols-1">
-            <li>
-              <ExperienceBox company="Allegro Development" date="2007 - 2010">
-                <h4>Software Developer</h4>
-                <p>
-                  Rewrote and enhanced a complex forecasting module written in
-                  C# which was part of a very large oil & gas management suite.
-                </p>
-              </ExperienceBox>
-            </li>
-            <li>
-              <ExperienceBox company="FedEx Kinkos" date="2007">
-                <h4>Developer</h4>
-                <p>
-                  Worked with a team to transform large data sets using visual
-                  tools.
-                </p>
-              </ExperienceBox>
-            </li>
-          </ul>
-        </section>
-
-        <section className="space-y-4">
-          <h2 className="section-header">Education</h2>
-
-          <ExperienceBox
-            company="University of Texas at Dallas"
-            date="2002 - 2007"
-          >
-            <h4>B.S. Computer Science</h4>
-            <p>
-              <strong>Notable Classes:</strong> Object Oriented Analysis &
-              Design, Computer Graphics, Data Structures
-            </p>
-          </ExperienceBox>
-        </section>
+        <ul className="space-y-6">
+          <li>
+            <SkillButton icon={UsersIcon} label="Collaboration & mentoring">
+              A product is only as good as the people who build it. I&lsquo;ve
+              had the chance to work on some incredible teams and I&lsquo;ve
+              always enjoyed mentoring others.
+            </SkillButton>
+          </li>
+          <li>
+            <SkillButton icon={PaintbrushIcon} label="Design">
+              Most recently, I&lsquo;ve been working with Tailwind and raw CSS
+              with React. In former projects I&lsquo;ve created custom theme
+              providers for both React and SwiftUI, designed and collaborated
+              inside of Figma, used LESS and SASS, and more.
+            </SkillButton>
+          </li>
+          <li>
+            <SkillButton icon={CloudyIcon} label="Cloud Services">
+              Most recently, I&lsquo;ve been working with AWS, Docker, and
+              Vercel. In former projects I&lsquo;ve used Azure and local web
+              servers.
+            </SkillButton>
+          </li>
+          <li>
+            <SkillButton icon={ReactIcon} label="React">
+              I&lsquo;ve been using React & React Native since 2015 on both
+              marketing and web app projects. This very site is built using
+              React using Next.js. On former projects I&lsquo;ve used Remix (now
+              React Router).
+            </SkillButton>
+          </li>
+          <li>
+            <SkillButton icon={SwiftIcon} label="SwiftUI">
+              I&lsquo;ve worked with UIKit and ObjectiveC a bit as well, but
+              I&lsquo;ve been using SwiftUI since the day it came out at WWDC
+              2019.
+            </SkillButton>
+          </li>
+          <li>
+            <SkillButton icon={CircleEllipsisIcon} label="Many more">
+              I&lsquo;ve worked with a variety of technologies, including
+              TypeScript, Node.js, and more. Earlier in my career I spent much
+              of my time on the backend using .Net and building out devops
+              practices.
+            </SkillButton>
+          </li>
+        </ul>
       </section>
-    </main>
-  )
-}
 
-type SkillButtonProps = {
-  icon: React.ComponentType<IconProps>
-} & React.AnchorHTMLAttributes<HTMLAnchorElement>
+      <section className="space-y-6 print:space-y-4">
+        <h2>Experience</h2>
 
-function SkillButton({
-  children,
-  icon: Icon,
-  ...props
-}: PropsWithChildren<SkillButtonProps>) {
-  return (
-    <a target="_blank" className="button-secondary" {...props}>
-      <Icon className="h-5 w-5 print:h-4 print:w-4" />
-      <span>{children}</span>
-    </a>
-  )
-}
+        <ul className="space-y-8">
+          <li>
+            <ExperienceBox
+              company="Amazon Web Services"
+              date="2024 - 2025"
+              jobTitle="Principal Consultant with Improving"
+            >
+              <p>
+                Lead contributor to the open source graph database visualization
+                tool Graph Explorer.
+              </p>
+              <ExperienceLink href="https://github.com/aws/graph-explorer/">
+                Graph Explorer on GitHub
+              </ExperienceLink>
+            </ExperienceBox>
+          </li>
+          <li>
+            <ExperienceBox
+              company="Influxer"
+              date="2023"
+              jobTitle="Principal Consultant with Improving"
+            >
+              <p>
+                Acted as the technical lead for the team rewriting the existing
+                Shopify website with a brand new design and an emphasis on
+                performance using Remix and Tailwind.
+              </p>
+              <ExperienceLink href="http://www.influxermerch.com">
+                Influxer Merch Shopify Website
+              </ExperienceLink>
+            </ExperienceBox>
+          </li>
+          <li>
+            <ExperienceBox
+              company="Spend Life Wisely"
+              date="2022 - 2023"
+              jobTitle="Principal Consultant with Improving"
+            >
+              <p>
+                Acted as the lead mobile developer using SwiftUI for the social
+                networking app Our Community. I moved the app to a simpler
+                architecture and rebuilt the components to be more flexible and
+                consistent. I also mentored juniors on the frontend team, and
+                provided technical and problem solving assistance for the entire
+                team.
+              </p>
+              <ExperienceLink href="https://apps.apple.com/us/app/our-community-local-events/id1575928251">
+                Our Community on the App Store
+              </ExperienceLink>
+            </ExperienceBox>
+          </li>
+          <li>
+            <ExperienceBox
+              company="OxeFit"
+              date="2021 - 2022"
+              jobTitle="Senior Consultant with Improving"
+            >
+              <p>
+                Implemented custom and complex UI animations and interactions in
+                a React Native video platform app. Unfortunately, it was never
+                released to the public.
+              </p>
+              <ExperienceLink href="https://www.oxefit.com/">
+                OxeFit Marketing Website
+              </ExperienceLink>
+            </ExperienceBox>
+          </li>
+          <li>
+            <ExperienceBox
+              company="Federation of State Medical Boards"
+              date="2020 - 2021"
+              jobTitle="Senior Consultant with Improving"
+            >
+              <p>
+                Implemented new features and polished existing UI in a .NET web
+                app designed to connect nurses and doctors to hospitals in need.
+              </p>
+              <ExperienceLink href="https://www.providerbridge.org/">
+                ProviderBridge
+              </ExperienceLink>
+            </ExperienceBox>
+          </li>
+          <li>
+            <ExperienceBox
+              company="Toyota of North America"
+              date="2019 - 2020"
+              jobTitle="Senior Consultant with Improving"
+            >
+              <p>
+                Architected and developed the high fidelity working prototype
+                implementation of the next generation Lexus & Toyota media
+                interface. I Worked directly with a large team of UX designers
+                using the iPad and SwiftUI.
+              </p>
+              <ExperienceLink href="https://pressroom.lexus.com/the-all-new-lexus-interface-multimedia-system-is-here-and-it-is-a-game-changer/">
+                Lexus Press Release
+              </ExperienceLink>
+            </ExperienceBox>
+          </li>
+          <li>
+            <ExperienceBox
+              company="Eagle Metal"
+              date="2018 - 2019"
+              jobTitle="Senior Consultant with Improving"
+            >
+              <p>
+                Polished the UI and rewrote the data layer for their roof truss
+                planning & ordering app.
+              </p>
+              <ExperienceLink href="https://eaglemetal.com/">
+                Visit Eagle Metal
+              </ExperienceLink>
+            </ExperienceBox>
+          </li>
+          <li>
+            <ExperienceBox
+              company="WatchGuard Video"
+              date="2014 - 2018"
+              jobTitle="Senior Consultant with Improving"
+            >
+              <p>
+                Worked on various projects that interact directly with USB
+                devices, manipulate video files, and reliably sync large files
+                across multiple physical boundaries.
+              </p>
+              <ExperienceLink href="https://www.motorolasolutions.com/en_us/video-security-access-control/videomanager-el.html">
+                Visit Evidence Library
+              </ExperienceLink>
+            </ExperienceBox>
+          </li>
+          <li>
+            <ExperienceBox
+              company="Thompson Reuters"
+              date="2013 - 2014"
+              jobTitle="Senior Consultant with Improving"
+            >
+              <p>
+                Audited security practices across organization, enhanced tax
+                form management software dealing directly with PDF files within
+                the WPF app.
+              </p>
+              <ExperienceLink href="https://tax.thomsonreuters.com/en">
+                Visit Tax & Accounting Software
+              </ExperienceLink>
+            </ExperienceBox>
+          </li>
+          <li>
+            <ExperienceBox
+              company="SpaceX"
+              date="2013"
+              jobTitle="Software Consultant with Excolo"
+            >
+              <p>
+                Hired and managed team that built out a data center product
+                procurement website using ASP.net MVC.
+              </p>
+            </ExperienceBox>
+          </li>
+          <li>
+            <ExperienceBox
+              company="Cisco Systems"
+              date="2010 - 2013"
+              jobTitle="Software Consultant with CH Reynolds"
+            >
+              <p>
+                Enhanced the existing Silverlight app that would visually manage
+                data center resources with a drag and drop UI.
+              </p>
+            </ExperienceBox>
+          </li>
+          <li>
+            <ExperienceBox
+              company="Allegro Development"
+              date="2007 - 2010"
+              jobTitle="Software Developer"
+            >
+              <p>
+                Rewrote and enhanced a complex forecasting module written in C#
+                which was part of a very large oil & gas management suite.
+              </p>
+            </ExperienceBox>
+          </li>
+          <li>
+            <ExperienceBox
+              company="FedEx Kinkos"
+              date="2007"
+              jobTitle="Developer"
+            >
+              <p>
+                Worked with a team to transform large data sets using visual
+                tools.
+              </p>
+            </ExperienceBox>
+          </li>
+        </ul>
+      </section>
 
-type FindMeLinkProps = {
-  icon: React.ComponentType<IconProps>
-} & React.AnchorHTMLAttributes<HTMLAnchorElement>
+      <section className="space-y-4">
+        <h2>Education</h2>
 
-function FindMeLink({
-  children,
-  icon: Icon,
-  ...props
-}: PropsWithChildren<FindMeLinkProps>) {
-  return (
-    <a
-      href="https://github.com/kmcginnes"
-      target="_blank"
-      className="text-muted hover:text-body print:text-body flex items-center gap-1 transition-colors"
-      {...props}
-    >
-      <Icon className="h-5 w-5 print:h-4 print:w-4" />
-      <span className="hidden print:block">{children}</span>
-    </a>
-  )
-}
-
-type ExternalLinkButtonProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
-
-function ExternalLinkButton({
-  children,
-  ...props
-}: PropsWithChildren<ExternalLinkButtonProps>) {
-  return (
-    <footer className="flex grow items-end print:hidden">
-      <a target="_blank" className="button max-w-fit" {...props}>
-        {children}
-      </a>
-    </footer>
-  )
-}
-
-type ExperienceBoxProps = {
-  company: string
-  date: string
-}
-
-function ExperienceBox({
-  company,
-  date,
-  children,
-}: PropsWithChildren<ExperienceBoxProps>) {
-  return (
-    <article className="card flex h-full flex-col gap-4 print:gap-2">
-      <header className="flex items-end justify-between gap-2 space-y-1">
-        <h1 className="text-xl font-extrabold tracking-wide print:text-base">
-          {company}
-        </h1>
-        <h2 className="text-secondary flex-shrink-0 text-balance text-base font-normal tracking-wide print:text-lg print:font-bold">
-          {date}
-        </h2>
-      </header>
-      <hr className="border-green-500 print:hidden" />
-      <div className="prose-default prose flex h-full max-w-none flex-col">
-        {children}
-      </div>
-    </article>
+        <ExperienceBox
+          company="University of Texas at Dallas"
+          date="2002 - 2007"
+          jobTitle="B.S. Computer Science"
+        >
+          <p>
+            <strong>Notable Classes</strong>
+            <span>&nbsp;&nbsp;&mdash;&nbsp;&nbsp;</span>
+            Object Oriented Analysis & Design, Computer Graphics, Data
+            Structures
+          </p>
+        </ExperienceBox>
+      </section>
+    </>
   )
 }
