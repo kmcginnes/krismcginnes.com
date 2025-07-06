@@ -1,5 +1,5 @@
 import "~/styles/globals.css"
-import { Rubik, Raleway, Nunito_Sans, Inter, Open_Sans } from "next/font/google"
+import { Open_Sans } from "next/font/google"
 import Footer from "./footer"
 import { env } from "~/env"
 import { Analytics } from "@vercel/analytics/react"
@@ -25,11 +25,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="m-0 p-0">
       <body
-        className={`bg-default accent-accent selection:bg-selection text-body content-grid relative min-h-screen font-sans text-pretty antialiased selection:text-white print:bg-transparent ${openSans.variable}`}
+        className={`bg-default accent-accent selection:bg-selection text-body content-grid relative m-0 min-h-lvh p-0 font-sans text-pretty antialiased selection:text-white print:bg-transparent ${openSans.variable}`}
       >
-        <HeroPattern className="text-accent bg-accent-muted absolute inset-x-0 top-0 -z-10 h-96 mask-b-from-20% mask-b-to-85% opacity-20 dark:block dark:bg-transparent print:hidden" />
+        <HeroPattern className="text-accent bg-accent-muted absolute inset-x-0 top-0 -z-10 m-0 h-96 mask-b-from-20% mask-b-to-85% p-0 opacity-20 dark:bg-transparent print:hidden" />
         {children}
         <Footer />
         <Analytics />

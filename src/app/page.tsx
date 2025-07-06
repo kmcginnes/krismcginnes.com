@@ -379,8 +379,6 @@ export default function HomePage() {
           jobTitle="B.S. Computer Science"
         >
           <p>
-            <strong>Notable Classes</strong>
-            <span>&nbsp;&nbsp;&mdash;&nbsp;&nbsp;</span>
             Object Oriented Analysis & Design, Computer Graphics, Data
             Structures
           </p>

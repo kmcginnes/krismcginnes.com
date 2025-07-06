@@ -13,7 +13,7 @@ export function FindMeLink({
   return (
     <a
       target="_blank"
-      className="hover:text-accent text-body flex items-center gap-1 transition-all hover:scale-120"
+      className="hover:text-accent text-body hover:drop-shadow-accent/30 drop-shadow-accent/0 flex items-center gap-1 shadow-none drop-shadow-sm transition-all duration-200 ease-in-out hover:scale-130"
       {...props}
     >
       <Icon className="size-6 print:size-4" />
