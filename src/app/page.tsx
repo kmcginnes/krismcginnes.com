@@ -12,7 +12,6 @@ import {
   ReactIcon,
   SkillButton,
   SwiftIcon,
-  HeroPattern,
 } from "~/components"
 import {
   CircleEllipsisIcon,
@@ -25,22 +24,20 @@ import {
 export default function HomePage() {
   return (
     <>
-      <section className="content-full-width relative">
-        <div className="space-y-4 pt-8 md:pt-12 print:pt-0">
-          <Image
-            src={profilePic}
-            alt="Profile"
-            className="size-24 shrink-0 rounded-full border-0 border-white opacity-100"
-            priority
-          />
-          <h1>
-            Hi, my name is{" "}
-            <strong className="text-accent print:text-emphasis print:font-black">
-              Kris McGinnes
-            </strong>
-            . I am an engineer and designer.
-          </h1>
-        </div>
+      <section className="space-y-4 pt-8 md:pt-12 print:pt-0">
+        <Image
+          src={profilePic}
+          alt="Profile"
+          className="size-24 shrink-0 rounded-full border-0 border-white opacity-100"
+          priority
+        />
+        <h1>
+          Hi, my name is{" "}
+          <strong className="text-accent print:text-emphasis print:font-black">
+            Kris McGinnes
+          </strong>
+          . I am an engineer and designer.
+        </h1>
       </section>
 
       <section className="space-y-6">
