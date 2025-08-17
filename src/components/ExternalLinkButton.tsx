@@ -1,9 +1,5 @@
-import {
-  ArrowUpRightIcon,
-  ChevronsRightIcon,
-  ExternalLinkIcon,
-} from "lucide-react"
-import { type ComponentPropsWithoutRef } from "react"
+import { ExternalLinkIcon } from "lucide-react"
+import type { ComponentPropsWithoutRef } from "react"
 
 export function ExperienceLink({
   children,

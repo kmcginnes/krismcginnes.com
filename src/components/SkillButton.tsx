@@ -1,5 +1,5 @@
-import { type PropsWithChildren } from "react"
-import { type IconProps } from "."
+import type { PropsWithChildren } from "react"
+import type { IconProps } from "."
 import { cn } from "~/lib/utils"
 
 type SkillButtonProps = {

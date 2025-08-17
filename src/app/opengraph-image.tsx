@@ -24,29 +24,27 @@ export default async function Image() {
   ).then((res) => res.arrayBuffer())
 
   return new ImageResponse(
-    (
-      // ImageResponse JSX element
-      <div
-        style={{
-          background: "#18181b",
-          color: "#fafafa",
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          gap: "0.5rem",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <div style={{ color: "#fafafa", fontWeight: 900, fontSize: 128 }}>
-          Kris McGinnes
-        </div>
-        <div style={{ color: "#bbf7d0", fontSize: 72, fontWeight: 500 }}>
-          Engineer & Designer
-        </div>
+    // ImageResponse JSX element
+    <div
+      style={{
+        background: "#18181b",
+        color: "#fafafa",
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        gap: "0.5rem",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <div style={{ color: "#fafafa", fontWeight: 900, fontSize: 128 }}>
+        Kris McGinnes
       </div>
-    ),
+      <div style={{ color: "#bbf7d0", fontSize: 72, fontWeight: 500 }}>
+        Engineer & Designer
+      </div>
+    </div>,
     // ImageResponse options
     {
       // For convenience, we can re-use the exported opengraph-image

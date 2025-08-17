@@ -1,4 +1,4 @@
-import { type MetadataRoute } from "next"
+import type { MetadataRoute } from "next"
 import { env } from "~/env"
 
 export default function robots(): MetadataRoute.Robots {
@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: baseUrl + "/sitemap.xml",
+    sitemap: `${baseUrl}/sitemap.xml`,
   }
 }
