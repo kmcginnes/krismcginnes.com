@@ -1,5 +1,5 @@
-import { type PropsWithChildren } from "react"
-import { type IconProps } from "."
+import type { PropsWithChildren } from "react"
+import type { IconProps } from "."
 
 type FindMeLinkProps = {
   icon: React.ComponentType<IconProps>

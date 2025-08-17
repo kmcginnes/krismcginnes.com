@@ -1,8 +1,4 @@
-import React, {
-  type ComponentPropsWithRef,
-  type PropsWithChildren,
-} from "react"
-import { cn } from "~/lib/utils"
+import type { ComponentPropsWithRef, PropsWithChildren } from "react"
 
 type ExperienceBoxProps = {
   company: string

@@ -1,10 +1,10 @@
 import "~/styles/globals.css"
-import { Rubik, Raleway, Nunito_Sans, Inter, Open_Sans } from "next/font/google"
+import { Open_Sans } from "next/font/google"
 import Footer from "./footer"
 import { env } from "~/env"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import React from "react"
+import type React from "react"
 import { HeroPattern } from "~/components"
 
 const openSans = Open_Sans({
